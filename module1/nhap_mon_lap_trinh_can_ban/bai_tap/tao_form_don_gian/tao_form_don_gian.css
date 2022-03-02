@@ -18,7 +18,7 @@ footer{
     background-color: #cccccc;
     min-height: 70px;
     padding: 15px;
-}
+}500
 .container{
     width: 100%;
     max-width: 1000px;
@@ -27,7 +27,7 @@ footer{
 }
 .login-form{
     width: 100%;
-    max-width: 1000px;
+    max-width: 500px;
     margin: 20px auto;
     background-color: #ffffff;
     padding: 15px;
