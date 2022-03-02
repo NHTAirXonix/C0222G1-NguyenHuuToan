@@ -4,21 +4,11 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-header{
-    background-color: #cccccc;
-    min-height: 70px;
-    padding: 15px;
-}
 main{
-    background-color: #dddddd;
+    background-color: cyan;
     min-height: 300px;
     padding: 7.5px 15px;
 }
-footer{
-    background-color: #cccccc;
-    min-height: 70px;
-    padding: 15px;
-}500
 .container{
     width: 100%;
     max-width: 1000px;
@@ -27,23 +17,27 @@ footer{
 }
 .login-form{
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     margin: 20px auto;
     background-color: #ffffff;
     padding: 15px;
     border-radius: 10px;
 }
 h1{
-    color: #009999;
+    color: white;
     font-size: 20px;
     margin-bottom: 30px;
+    text-align: center;
+    background-color: red;
+    border-radius: 5px;
 }
 .input-box{
     margin-bottom: 10px;
+    color: blue;
 }
 .input-box input{
     padding: 7.5px 15px;
-    width: 100%;
+    width: 80%;
     border: 1px solid #cccccc;
     outline: none;
 }
@@ -54,8 +48,26 @@ h1{
 .btn-box button{
     padding: 7.5px 15px;
     border-radius: 2px;
-    background-color: #009999;
-    color: #ffffff;
+    background-color: darkgray;
+    color: black;
     border: none;
     outline: none;
+}
+.list{
+    color: darkorange;
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 1px;
+    font: normal;
+    text-indent: 56px;
+}
+.list1{
+    color: darkorange;
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 1px;
+    font: normal;
+    text-indent: 120px;
 }
