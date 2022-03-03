@@ -10,43 +10,50 @@
     <div class="dkhv">
         <h1>ĐĂNG KÝ HỌC VIÊN</h1>
     </div>
-    <div class="optionname">
-        <label for="fname">Họ và tên </label>
-    </div>
-    <div>
-        <input class="marinput" type="text" id="fname" name="fname">
-    </div>
-    <div class="optionname">
-        <label for="lname">Ngày sinh </label>
-    </div>
-    <div>
-        <input class="marinput" type="text" id="lname" name="lname">
-    </div>
-    <div class="optionname">
-        <label for="lname">Giới tính </label>
-    </div>
-    <div>
-        <label for="Nam">Nam</label>
-        <input class="ratio" type="radio" id="Nam" name="Nam" value="Nam">
-        <label for="Nu">Nữ </label>
-        <input class="ratio" type="radio" id="Nu" name="Nu" value="Nữ">
-
-    </div>
-    <div class="diachi">
-        <label for="fname">Địa chỉ</label>
-    </div>
-    <div>
-        <input class="marinput" type="text" id="fname" name="fname">
-    </div>
+    <table style="font-size: 25px">
+        <tr>
+            <th style="text-align: left; color: blue;width: 25%">Họ và tên</th>
+            <td colspan="3" ><input style="width: 75%" type="text" name="name"></td>
+        </tr>
+        <tr>
+            <th style="text-align: left; color: blue;width: 25%">Ngày sinh</th>
+            <td colspan="3" ><input style="width: 75%" type="text" name="dayofbirth"></td>
+        </tr>
+        <tr>
+            <th style="text-align: left; color: blue;width: 25">Giới tính</th>
+            <td ><input class="ratio" type="radio" name="gender" value="Nam">Nam</td>
+            <td ><input class="ratio" type="radio" name="gender" value="Nu">Nữ</td>
+        </tr>
+        <tr>
+            <th style="text-align: left; color: blue">Địa chỉ</th>
+            <td colspan="3" ><input style="width: 75%; " type="text" name="address"></td>
+        </tr>
+        <tr>
+            <th style="text-align: left; color: blue">Lớp</th>
+            <td colspan="3" >
+                <select name="class">
+                    <option value="0">-Chọn lớp-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th style="text-align: left; color: blue;width: 25%">Email</th>
+            <td colspan="3" ><input style="width: 75%" type="text" name="email"></td>
+        </tr>
+        <tr>
+            <th style="text-align: left; color: blue;width: 25%">Điện thoại</th>
+            <td colspan="3" ><input style="width: 75%" type="text" name="phonenumber"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: left"><button type="submit">Đăng ký</td>
+            <td style="text-align: left"><button type="reset">Nhập lại</button></td>
+            <td></td>
+        </tr>
+    </table>
 </main>
-
-
-
-
-
-
-
-
-
 </body>
 </html>

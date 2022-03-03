@@ -1,9 +1,4 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    font-family: sans-serif;
-    box-sizing: border-box;
-}
+
 main{
     background-color: cyan;
     min-height: 300px;
@@ -30,34 +25,4 @@ h1{
     text-align: center;
     background-color: red;
     border-radius: 5px;
-}
-.input-box{
-    margin-bottom: 10px;
-    color: blue;
-}
-.input-box input{
-    padding: 7.5px 15px;
-    width: 100%;
-    border: 1px solid #cccccc;
-    outline: none;
-}
-.btn-box{
-    text-align: center;
-    margin-top: 30px;
-}
-.btn-box button{
-    padding: 7.5px 15px;
-    border-radius: 2px;
-    background-color: darkgray;
-    color: black;
-    border: none;
-    outline: none;
-}
-.list1{
-    color: darkorange;
-    width: 100%;
-    max-width: 500px;
-    margin: 15px auto;
-    padding: 20px 0px 0px 0px;
-    font: normal;
 }
