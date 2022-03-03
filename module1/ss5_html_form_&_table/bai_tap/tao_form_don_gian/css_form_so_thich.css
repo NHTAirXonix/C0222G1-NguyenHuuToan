@@ -58,7 +58,6 @@ h1{
     width: 100%;
     max-width: 500px;
     margin: 15px auto;
-    padding: 1px;
+    padding: 20px 0px 0px 0px;
     font: normal;
-    text-indent: 20px;
 }

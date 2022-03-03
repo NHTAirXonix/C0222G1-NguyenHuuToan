@@ -1,0 +1,49 @@
+main{
+    background-color: khaki;
+    min-height: 800px;
+    margin: 5px;
+    max-width: 600px;
+    padding: 5px;
+}
+
+.dkhv{
+    background-color: aquamarine;
+    min-height: 30px;
+    max-height: 50px;
+    max-width: 590px;
+    margin: 0px;
+    padding: 1px;
+}
+
+h1{
+    color: blue;
+    font-size: 25px;
+    text-align: left;
+    margin: 1px;
+}
+
+.optionname {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.marinput{
+    float: right;
+    width: 70%;
+    margin-top: 6px;
+    margin-right: 20px;
+}
+
+.ratio{
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+
+.diachi{
+    float: left;
+    width: 30%;
+    margin-top: 6px;
+    margin-left: 0px;
+
+}
