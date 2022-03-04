@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            width: 150px;
+            min-width: 150px;
+            height: 50px;
+            min-height: 50px;
+        }
+        .input{
+            width: 150px;
+            min-width: 150px;
+            height: 50px;
+            min-height: 50px;
+            font-size: 15px;
+        }
+        .button {
+            width: 150px;
+            min-width: 150px;
+            height: 50px;
+            min-height: 50px;
+            color: white;
+            background-color: blueviolet;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body style="font-family: Arial; font-size: 20px">
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th></th>
+            <th>From Currency</th>
+            <th></th>
+            <th>To Currency</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input class="input" type="text" id="input"></td>
+            <td></td>
+            <td>
+                <select class="input" id="current1">
+                    <option value="dollars">Dollars</option>
+                    <option value="vnd">VND</option>
+                </select>
+            </td>
+            <td></td>
+            <td>
+                <select class="input" id="current2">
+                    <option value="dollars">Dollars</option>
+                    <option value="vnd">VND</option>
+                </select>
+            </td>
+            </td>
+            <td></td>
+            <td>
+                <button class="button" type="submit" onclick="sentdata()">Convert</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function sentdata() {
+            let inputvalue = document.getElementById('input').value;
+            let current1 = document.getElementById('current1').value;
+            let current2 = document.getElementById('current2').value;
+            if ( current1 == current2) {
+                alert(inputvalue);
+            }
+            if ( current1 == 'dollars' && current2 == 'vnd') {
+                alert(inputvalue*23000);
+            }
+            if ( current1 == 'vnd' && current2 == 'dollars') {
+                alert(inputvalue/23000);
+            }
+        }
+    </script>
+</body>
+</html>
