@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var weight = parseInt(prompt('Input your weight (unit of measure is Kg):'));
+    var height = parseInt(prompt('Input your height (unit of measure is Meter:'));
+    var bmi = weight / (height ^ 2);
+    if (bmi < 18)
+        alert(bmi.toFixed(2) + " Underweight")
+    else if (bmi < 25.0)
+        alert(bmi.toFixed(2) + " Normal");
+    else if (bmi < 30.0)
+        alert(bmi.toFixed(2) + " Overweight");
+    else
+        alert(bmi.toFixed(2) + " Obese");
+</script>
+</body>
+</html>
