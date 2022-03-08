@@ -7,17 +7,19 @@
         td {
             min-width: 200px;
             max-width: 200px;
-            min-height: 50px;
-            max-height: 50px;
+            min-height: 100px;
+            max-height: 100px;
         }
         table {
             background-color: #919191;
         }
         button  {
-            min-width: 100px;
-            max-width: 100px;
-            min-height: 50px;
-            max-height: 50px;
+            min-width: 50px;
+            max-width: 50px;
+            min-height: 25px;
+            max-height: 25px;
+            object-position: center;
+            position: absolute;
         }
     </style>
 </head>
@@ -43,30 +45,30 @@
 
     function goodfu() {
         if (good == 1) {
-            document.getElementById('goodid').style.left = 50 + 'px';
+            document.getElementById('goodid').style.left = 25 + 'px';
             good++;
         } else if (good == 2) {
-            document.getElementById('goodid').style.left = -50 + 'px';
+            document.getElementById('goodid').style.left = 25 + 'px';
             good--;
         }
     }
 
     function fastfu() {
         if (fast == 1) {
-            document.getElementById('fastid').style.left = 50 + 'px';
+            document.getElementById('fastid').style.left = 25 + 'px';
             fast++;
         } else if (fast == 2) {
-            document.getElementById('fastid').style.left = -50 + 'px';
+            document.getElementById('fastid').style.left = 25 + 'px';
             fast--;
         }
     }
 
     function cheapfu() {
         if (cheap == 1) {
-            document.getElementById('cheapid').style.left = 50 + 'px';
+            document.getElementById('cheapid').style.left = 25 + 'px';
             cheap++;
-        } else if (good == 2) {
-            document.getElementById('cheapid').style.left = -50 + 'px';
+        } else if (cheap == 2) {
+            document.getElementById('cheapid').style.left = 25 + 'px';
             cheap--;
         }
     }

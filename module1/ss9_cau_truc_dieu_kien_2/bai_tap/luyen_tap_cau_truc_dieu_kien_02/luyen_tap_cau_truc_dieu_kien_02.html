@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<hr><!--bai 1 chuyen do C sang F-->
+<p style="font-size: 30px; text-align: center">Convert from Celsius to Fahrenheit</p>
+<table>
+    <tr>
+        <td><input id="celsius" type="text">Enter Celsius:</td>
+        <td><button onclick="convertctof()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 2 chuyen tu met sang feet-->
+<p style="font-size: 30px; text-align: center">Convert from metter to feet</p>
+<table>
+    <tr>
+        <td><input id="metter" type="text">Enter value ( unit metter ):</td>
+        <td><button onclick="convertmtof()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 3 tinh dien tich hinh vuong khi biet do dai canh-->
+<p style="font-size: 30px; text-align: center">Calculated the area of the square</p>
+<table>
+    <tr>
+        <td><input id="edge" type="text">Enter your edge:</td>
+        <td><button onclick="areasquare()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 4 tinh dien tich hinh chu nhat biet 2 canh a b-->
+<p style="font-size: 30px; text-align: center">Calculated the area of the rectangular</p>
+<table>
+    <tr>
+        <td><input id="edge1" type="text">Enter squared edge 1:</td>
+        <td><input id="edge2" type="text">Enter squared edge 2:</td>
+        <td><button onclick="arearec()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 5 tinh dien tich tam giac vuong-->
+<p style="font-size: 30px; text-align: center">Calculated the area of the right triangle</p>
+<table>
+    <tr>
+        <td><input id="edge3" type="text">Enter right triangle edge 1:</td>
+        <td><input id="edge4" type="text">Enter right triangle edge 2:</td>
+        <td><button onclick="arearitri()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 6 giai phuong trinh bac 1-->
+<p style="font-size: 30px; text-align: center">Calculated the first degree equation</p>
+<table>
+    <tr>
+        <td><input id="numa" type="text">Enter number a:</td>
+        <td><input id="numb" type="text">Enter number b:</td>
+        <td><button onclick="fdequation()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 7 giai phuong trinh bac 2-->
+<p style="font-size: 30px; text-align: center">Calculated the second degree equation</p>
+<table>
+    <tr>
+        <td><input id="numbera" type="text">Enter number a:</td>
+        <td><input id="numberb" type="text">Enter number b:</td>
+        <td><input id="numberc" type="text">Enter number c:</td>
+        <td><button onclick="sdequation()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+
+<script>
+    function convertctof() {
+        let celcius = parseInt(document.getElementById('celsius').value);
+        let fahrenheit = 9/5 * celcius + 32;
+        alert('The fahrenheit is: ' + fahrenheit + ' F');
+    }
+
+    function convertmtof() {
+        let metter = parseInt(document.getElementById('metter').value);
+        let feet = metter * 3.28;
+        alert('The height measure by feed is: ' + feet + ' ft');
+    }
+
+    function areasquare() {
+        let edge = parseInt(document.getElementById('edge').value);
+        let area = edge * edge;
+        alert('The area of the square is: ' + area);
+    }
+
+    function arearec() {
+        let edge1 = parseInt(document.getElementById('edge1').value);
+        let edge2 = parseInt(document.getElementById('edge2').value);
+        let area = edge1 * edge2;
+        alert('The area of the rectangular is: ' + area);
+    }
+
+    function arearitri() {
+        let edge3 = parseInt(document.getElementById('edge3').value);
+        let edge4 = parseInt(document.getElementById('edge4').value);
+        let area = edge3 * edge4 /2;
+        alert('The area of the right triangle is: ' + area);
+    }
+
+    function fdequation() {
+        let a = document.getElementById('numa').value;
+        let b = document.getElementById('numb').value;
+        if(a == 0) {
+            if(b == 0){
+                alert(`All are solution for x`)
+            }
+            else{
+                alert(`Can't solve for x`)
+            }
+        }
+        else{
+            alert(`x = ` + (-b/a) )
+        }
+    }
+
+    function sdequation() {
+        let a = document.getElementById('numbera').value;
+        let a = document.getElementById('numbera').value;
+        let a = document.getElementById('numbera').value;
+        let a = document.getElementById('numbera').value;
+
+        var d = (b * b) - (4 * a * c)
+        if(a == 0) {
+            if(b == 0){
+                if (c == 0) {
+                    document.write('All are solutions of x')
+
+                }
+                else{
+                    document.write(`Can't solve for x`)
+                }
+            }
+            else{
+                document.write('x = '+(-c/b))
+            }
+        }
+        else if (d >= 0) {
+            document.write(`x1 = `+ ((-b + Math.sqrt(d)) / (2 * a)))
+            document.write(`<br>`)
+            document.write(`x2 = `+ ((-b - Math.sqrt(d)) / (2 * a)))
+        } else {
+            document.write(`Can't solve for x`)
+        }
+    }
+</script>
+</body>
+</html>

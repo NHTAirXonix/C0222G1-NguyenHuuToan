@@ -11,7 +11,6 @@
 <script>
     function cal() {
         let month_in_year = parseInt(document.getElementById('month').value);
-        var day_of_month;
         switch (month_in_year) {
             case 1:
             case 3:
@@ -34,7 +33,6 @@
             default:
                 alert('nhập có cái tháng cũng sai :)');
         }
-        document.getElementById('result').value = day_of_month;
     }
 </script>
 </body>
