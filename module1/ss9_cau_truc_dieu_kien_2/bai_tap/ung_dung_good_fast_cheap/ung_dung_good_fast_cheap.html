@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            min-width: 200px;
+            max-width: 200px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+        table {
+            background-color: #919191;
+        }
+        button  {
+            min-width: 100px;
+            max-width: 100px;
+            min-height: 50px;
+            max-height: 50px;
+        }
+    </style>
+</head>
+<body style="font-family: Arial">
+    <table>
+        <tr>
+            <td><button id="goodid" onclick="goodfu()"></button></td>
+            <td>GOOD</td>
+        </tr>
+        <tr>
+            <td><button id="fastid" onclick="fastfu()"></button></td>
+            <td>FAST</td>
+        </tr>
+        <tr>
+            <td><button id="cheapid" onclick="cheapfu()"></button></td>
+            <td>CHEAP</td>
+        </tr>
+    </table>
+<script>
+    let good = 1;
+    let fast = 1;
+    let cheap = 1;
+
+    function goodfu() {
+        if (good == 1) {
+            document.getElementById('goodid').style.left = 50 + 'px';
+            good++;
+        } else if (good == 2) {
+            document.getElementById('goodid').style.left = -50 + 'px';
+            good--;
+        }
+    }
+
+    function fastfu() {
+        if (fast == 1) {
+            document.getElementById('fastid').style.left = 50 + 'px';
+            fast++;
+        } else if (fast == 2) {
+            document.getElementById('fastid').style.left = -50 + 'px';
+            fast--;
+        }
+    }
+
+    function cheapfu() {
+        if (cheap == 1) {
+            document.getElementById('cheapid').style.left = 50 + 'px';
+            cheap++;
+        } else if (good == 2) {
+            document.getElementById('cheapid').style.left = -50 + 'px';
+            cheap--;
+        }
+    }
+</script>
+</body>
+</html>

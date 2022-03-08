@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+
+        }
+    </style>
+</head>
+<body>
+
+    <hr><!--bai 1 a chia het cho b hay khong-->
+    <p style="font-size: 30px; text-align: center">a division b</p>
+    <table>
+        <tr>
+            <td><input id="inputa" type="text">Number a:</td>
+            <td><input id="inputb" type="text">Number b:</td>
+            <td><button onclick="abdivision()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+    <hr><!--bai 2 du tuoi vao lop 10 hay khong-->
+    <p style="font-size: 30px; text-align: center">Check your age enough to enter high school</p>
+    <table>
+        <tr>
+            <td><input id="age" type="text">Enter your age:</td>
+            <td><button onclick="agecheck()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+    <hr><!--bai 3 lon hon hay nho hon 0-->
+    <p style="font-size: 30px; text-align: center">Greater or smaller than 0</p>
+    <table>
+        <tr>
+            <td><input id="numberc" type="text">Enter your age:</td>
+            <td><button onclick="gsthan0()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+    <hr><!--bai 4 nhap 3 so nguyen va tim so lon nhat-->
+    <p style="font-size: 30px; text-align: center">Input 3 interger number and find the biggest number</p>
+    <table>
+        <tr>
+            <td><input id="number1" type="text">Enter number 1:</td>
+            <td><input id="number2" type="text">Enter number 2:</td>
+            <td><input id="number3" type="text">Enter number 3:</td>
+            <td><button onclick="biggestnum()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+    <hr><!--bai 5 danh gia hoc sinh bang 3 loai diem-->
+    <p style="font-size: 30px; text-align: center">Get grand for student by 3 test</p>
+    <table>
+        <tr>
+            <td><input id="exam1" type="text">Enter Normal Exam ( From 0 - 10):</td>
+            <td><input id="exam2" type="text">Enter Midterm Exam ( From 0 - 10):</td>
+            <td><input id="exam3" type="text">Enter Final Exam ( From 0 - 10):</td>
+            <td><button onclick="grand()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+    <hr><!--bai 6 tinh hoa hong theo doanh so ban hang-->
+    <p style="font-size: 30px; text-align: center">Calculate your commission received according to sales </p>
+    <table>
+        <tr>
+            <td><input id="sales" type="text">Enter your sales:</td>
+            <td><input id="numberp" type="text">Enter your price of product:</td>
+            <td><input id="commission" type="text">Enter your commission/product (unit %):</td>
+            <td><button onclick="commission()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+    <hr><!--bai 7 tinh cuoc dien thoai cho mot ho gia dinh voi cac thong so da cho-->
+    <p style="font-size: 30px; text-align: center">Calculate your phone bill </p>
+    <table>
+        <tr>
+            <td><input id="usedtime" type="text">Enter your used time (unit: minute):</td>
+            <td><input id="price" type="text">Enter your price/min:</td>
+            <td><button onclick="phonebill()" type="submit">Check</button></td>
+        </tr>
+    </table>
+
+
+<script>
+    function abdivision() {
+        let numbera = parseInt(document.getElementById('inputa').value);
+        let numberb = parseInt(document.getElementById('inputb').value);
+        let result1 = numbera % numberb;
+        if (result1 == 0) {
+            alert('a divisible by b');
+        } else {
+            alert('a not divisible by b');
+        }
+    }
+
+    function agecheck() {
+        let age = parseInt(document.getElementById('age').value);
+        if (age >= 15) {
+            alert('Enough age!');
+        } else {
+            alert('Not enough age!');
+        }
+    }
+
+    function gsthan0() {
+        let numberc = parseInt(document.getElementById('numberc').value);
+        if (numberc > 0) {
+            alert('Your number greater than 0 !');
+        } else if (numberc < 0){
+            alert('Your number smaller than 0 !!');
+        } else {
+            alert('Your number equal 0 !!');
+        }
+    }
+
+    function biggestnum() {
+        let number1 = parseInt(document.getElementById('number1').value);
+        let number2 = parseInt(document.getElementById('number2').value);
+        let number3 = parseInt(document.getElementById('number3').value);
+        if (number1 == number2 && number1 > number3) {
+            alert('number 1 and number 2 is biggest!');
+        } else if (number1 == number2 && number1 < number3){
+            alert('number 3 is the biggest number');
+        } else if (number1 == number3 && number1 > number2){
+            alert('number 1 and number 3 is the biggest number');
+        } else if (number1 == number3 && number1 < number2){
+            alert('number 2 is the biggest number');
+        } else if (number1 > number2 && number1 > number3){
+            alert('Number 1 is the biggest number');
+        } else if (number2  > number3) {
+            alert('number 2 is the biggest number');
+        } else if (number1 == number3 && number1 == number2){
+            alert('number1 = number2 = number3');
+        } else {
+            alert('number 3 is the biggest number')
+        }
+    }
+
+    function grand() {
+        let scexam1 = parseInt(document.getElementById('exam1').value);
+        let scexam2 = parseInt(document.getElementById('exam2').value);
+        let scexam3 = parseInt(document.getElementById('exam3').value);
+        let grand = (scexam1 + (scexam2 * 2) + (scexam3 * 3)) / 6;
+        if (grand >= 8) {
+            alert('Grand A');
+        } else if (grand >= 7) {
+            alert('Grand B');
+        } else if (grand >= 6) {
+            alert('Grand C');
+        } else {
+            alert('Grand D');
+        }
+    }
+
+    function commission() {
+        let commission = parseInt(document.getElementById('commission').value);
+        let nump = parseInt(document.getElementById('numberp').value);
+        let sales = parseInt(document.getElementById('sales').value);
+        let result = nump * sales * (commission*0.01);
+            alert('Your commission monney is:'+ result);
+    }
+
+    function phonebill() {
+        let usedtime = parseInt(document.getElementById('usedtime').value);
+        let price = parseInt(document.getElementById('price').value);
+        let result = usedtime * price
+        alert('Your phone bill is:'+ result);
+    }
+</script>
+</body>
+</html>
