@@ -76,6 +76,59 @@
     </tr>
 </table>
 
+<hr><!--bai 8 kiem tra tuoi nguoi-->
+<p style="font-size: 30px; text-align: center">Check your age</p>
+<table>
+    <tr>
+        <td><input id="age" type="text">Enter your age a:</td>
+        <td><button onclick="checkage()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 9 kiem tra 3 so co phai cach cua tam giac khong-->
+<p style="font-size: 30px; text-align: center">check a, b, c are sides of triangle</p>
+<table>
+    <tr>
+        <td><input id="edgea" type="text">Enter edge a:</td>
+        <td><input id="edgeb" type="text">Enter edge b:</td>
+        <td><input id="edgec" type="text">Enter edge c:</td>
+        <td><button onclick="checktriangle()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 10 tinh gia tien dien-->
+<p style="font-size: 30px; text-align: center">Electric bill</p>
+<table>
+    <tr>
+        <td><input id="elec" type="text">Enter the amount of electricity used ( unit kWh ):</td>
+        <td><button onclick="elecbill()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 11 tinh thue thu nhap ca nhan-->
+<p style="font-size: 30px; text-align: center">Personal income tax</p>
+<table>
+    <tr>
+        <td><input id="tax" type="text">Enter your income in one month ( unit VND):</td>
+        <td><button onclick="pertax()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+<hr><!--bai 12 tinh lai ngan hang-->
+<p style="font-size: 30px; text-align: center">Bank interest rate</p>
+<table>
+    <tr>
+        <td><input id="moneyin" type="text">Enter your bank deposit amount ( unit VND):</td>
+        <td><input id="rate" type="text">Enter your bank interest rate ( unit %):</td>
+        <td><input id="month" type="text">Enter the amount of month you want to deposit:</td>
+        <td><button onclick="calbank()" type="submit">Check</button></td>
+    </tr>
+</table>
+
+
+
+
+
 
 <script>
     function convertctof() {
@@ -113,48 +166,129 @@
     function fdequation() {
         let a = document.getElementById('numa').value;
         let b = document.getElementById('numb').value;
-        if(a == 0) {
-            if(b == 0){
-                alert(`All are solution for x`)
+        if(a === 0) {
+            if(b === 0){
+                alert(`All are solution for x`);
             }
             else{
-                alert(`Can't solve for x`)
+                alert(`Can't solve for x`);
             }
         }
         else{
-            alert(`x = ` + (-b/a) )
+            alert(`x = ` + (-b/a) );
         }
     }
 
     function sdequation() {
         let a = document.getElementById('numbera').value;
-        let a = document.getElementById('numbera').value;
-        let a = document.getElementById('numbera').value;
-        let a = document.getElementById('numbera').value;
+        let b = document.getElementById('numberb').value;
+        let c = document.getElementById('numberc').value;
+        let d = (b * b) - (4 * a * c)
 
-        var d = (b * b) - (4 * a * c)
-        if(a == 0) {
-            if(b == 0){
-                if (c == 0) {
-                    document.write('All are solutions of x')
+        if(a === 0) {
+            if(b === 0){
+                if (c === 0) {
+                    alert('All are solutions of x');
 
                 }
                 else{
-                    document.write(`Can't solve for x`)
+                    alert(`Can't solve for x`);
                 }
             }
             else{
-                document.write('x = '+(-c/b))
+                    alert('x = '+(-c/b));
             }
         }
         else if (d >= 0) {
-            document.write(`x1 = `+ ((-b + Math.sqrt(d)) / (2 * a)))
-            document.write(`<br>`)
-            document.write(`x2 = `+ ((-b - Math.sqrt(d)) / (2 * a)))
+            alert(`x1 = `+ ((-b + Math.sqrt(d)) / (2 * a)));
+            alert(`x2 = `+ ((-b - Math.sqrt(d)) / (2 * a)));
         } else {
-            document.write(`Can't solve for x`)
+            alert(`Can't solve for x`);
         }
     }
+
+    function checkage() {
+        let age = parseInt(document.getElementById('age').value);
+        if (age > 0 && age < 120) {
+            alert('your age is human age');
+        } else {
+            alert('your age is not human age');
+        }
+    }
+
+    function checktriangle() {
+        let a = parseInt(document.getElementById('edgea').value);
+        let b = parseInt(document.getElementById('edgeb').value);
+        let c = parseInt(document.getElementById('edgec').value);
+        if (a > 0 && b > 0 && c > 0) {
+            if (a + b > c && b + c > a && a + c > b) {
+                alert(`a, b, c is a edges of the triangle!`);
+            } else {
+                alert(`a, b, c is not a edges of the triangle!`);
+            }
+        }else {
+                alert(`a, b, c is not a edges of the triangle!`);
+        }
+
+    }
+
+    function elecbill() {
+        let elec = parseInt(document.getElementById('elec').value);
+        let bill = 0;
+        if ( elec < 0) {
+           alert(`Wrong input, input must be greater than 0!`);
+        } else if ( elec <= 50) {
+            bill = elec * 1678;
+            alert('Your electric bill is: ' + bill + ' VND')
+        } else if ( elec <= 100) {
+            bill = (50 * 1678) + ((elec - 50) * 1734);
+            alert('Your electric bill is: ' + bill + ' VND')
+        } else if ( elec <= 200) {
+            bill = (50 * 1678) + (50 * 1734) + ((elec - 100) * 2014);
+            alert('Your electric bill is: ' + bill + ' VND')
+        } else if ( elec <= 300) {
+            bill = (50 * 1678) + (50 * 1734) + (100 * 2014) + ((elec -200) * 2536);
+            alert('Your electric bill is: ' + bill + ' VND')
+        }
+    }
+
+    function pertax() {
+        let income = parseInt(document.getElementById('tax').value);
+        let tax = 0;
+        if ( income > 80000000) {
+            tax = income * 0.35;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else if ( income > 52000000) {
+            tax = income * 0.3;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else if ( income > 32000000) {
+            tax = income * 0.25;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else if ( income > 18000000) {
+            tax = income * 0.2;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else if ( income > 10000000) {
+            tax = income * 0.15;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else if ( income > 5000000) {
+            tax = income * 0.10;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else if ( income > 0) {
+            tax = income * 0.05;
+            alert(`Your personal income tax is: ` + tax + ' VND');
+        } else {
+            alert('Wrong input');
+        }
+    }
+
+    function calbank() {
+        let money = parseInt(document.getElementById('moneyin').value);
+        let rates = document.getElementById('rate').value;
+        let month = parseInt(document.getElementById('month').value);
+        let moneyInterestRate = money * (rates * 0.01) / 360 * (30 * month);
+        alert(`Your personal income tax is: ` + moneyInterestRate + ' VND');
+    }
+
 </script>
 </body>
 </html>

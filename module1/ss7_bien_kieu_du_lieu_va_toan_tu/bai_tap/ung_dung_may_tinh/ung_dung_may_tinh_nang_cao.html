@@ -65,6 +65,7 @@
         <div class="keyboard">
             <button class="item item1" value="AC" onclick="Result.value=''">AC</button>
             <button class="item item2" onclick="Result.value=Result.value.substr(0,Result.value.length-1)">DEL</button>
+            <button class="item item19" id="equal" value="=" onclick="Result.value=eval(Result.value)">=</button>
             <button class="item item3" value="+" onclick="Result.value+=this.value">+</button>
             <button class="item item4" value="7" onclick="Result.value+=this.value">7</button>
             <button class="item item5" value="8" onclick="Result.value+=this.value">8</button>
@@ -81,9 +82,8 @@
             <button class="item item16" value="0" onclick="Result.value+=this.value">0</button>
             <button class="item item17" value="00" onclick="Result.value+=this.value">00</button>
             <button class="item item18" value="." onclick="Result.value+=this.value">.</button>
-            <button class="item item19" id="equal" value="=" onclick="Result.value=eval(Result.value)">=</button>
+
         </div>
     </div>
-
 </body>
 </html>
