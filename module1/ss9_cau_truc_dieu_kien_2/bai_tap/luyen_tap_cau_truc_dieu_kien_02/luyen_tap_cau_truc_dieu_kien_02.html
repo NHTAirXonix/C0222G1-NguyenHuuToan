@@ -4,291 +4,398 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        p{
+            font-size: 25px;
+            text-align: center;
+            background-color: #2c5672;
+            color: white;
+        }
     </style>
 </head>
-<body>
+<body style="font-family: Arial,serif">
 
 <hr><!--bai 1 chuyen do C sang F-->
-<p style="font-size: 30px; text-align: center">Convert from Celsius to Fahrenheit</p>
+<p>Problem1: Convert from Celsius to Fahrenheit</p>
 <table>
     <tr>
-        <td><input id="celsius" type="text">Enter Celsius:</td>
+        <td>Enter Celsius:</td>
+    </tr>
+    <tr>
+        <td><label for="celsius"></label><input id="celsius" type="text"></td>
         <td><button onclick="convertctof()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 2 chuyen tu met sang feet-->
-<p style="font-size: 30px; text-align: center">Convert from metter to feet</p>
+<p>Problem2: Convert from metter to feet</p>
 <table>
     <tr>
-        <td><input id="metter" type="text">Enter value ( unit metter ):</td>
+        <td>Enter value ( unit metter ):</td>
+    </tr>
+    <tr>
+        <td><label for="metter"></label><input id="metter" type="text"></td>
         <td><button onclick="convertmtof()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 3 tinh dien tich hinh vuong khi biet do dai canh-->
-<p style="font-size: 30px; text-align: center">Calculated the area of the square</p>
+<p>Problem3: Calculated the area of the square</p>
 <table>
     <tr>
-        <td><input id="edge" type="text">Enter your edge:</td>
+        <td>Enter your edge:</td>
+    </tr>
+    <tr>
+        <td><label for="edge"></label><input id="edge" type="text"></td>
         <td><button onclick="areasquare()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 4 tinh dien tich hinh chu nhat biet 2 canh a b-->
-<p style="font-size: 30px; text-align: center">Calculated the area of the rectangular</p>
+<p>Problem4: Calculated the area of the rectangular</p>
 <table>
     <tr>
-        <td><input id="edge1" type="text">Enter squared edge 1:</td>
-        <td><input id="edge2" type="text">Enter squared edge 2:</td>
+        <td>Enter squared edge 1:</td>
+        <td>Enter squared edge 2:</td>
+    </tr>
+    <tr>
+        <td><label for="edge1"></label><input id="edge1" type="text"></td>
+        <td><label for="edge2"></label><input id="edge2" type="text"></td>
         <td><button onclick="arearec()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 5 tinh dien tich tam giac vuong-->
-<p style="font-size: 30px; text-align: center">Calculated the area of the right triangle</p>
+<p>Problem5: Calculated the area of the right triangle</p>
 <table>
     <tr>
-        <td><input id="edge3" type="text">Enter right triangle edge 1:</td>
-        <td><input id="edge4" type="text">Enter right triangle edge 2:</td>
+        <td>Enter right triangle edge 1:</td>
+        <td>Enter right triangle edge 2:</td>
+    </tr>
+    <tr>
+        <td><label for="edge3"></label><input id="edge3" type="text"></td>
+        <td><label for="edge4"></label><input id="edge4" type="text"></td>
         <td><button onclick="arearitri()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 6 giai phuong trinh bac 1-->
-<p style="font-size: 30px; text-align: center">Calculated the first degree equation</p>
+<p>Problem6: Calculated the first degree equation</p>
 <table>
     <tr>
-        <td><input id="numa" type="text">Enter number a:</td>
-        <td><input id="numb" type="text">Enter number b:</td>
+        <td>Enter number a:</td>
+        <td>Enter number b:</td>
+    </tr>
+    <tr>
+        <td><label for="numa"></label><input id="numa" type="text"></td>
+        <td><label for="numb"></label><input id="numb" type="text"></td>
         <td><button onclick="fdequation()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 7 giai phuong trinh bac 2-->
-<p style="font-size: 30px; text-align: center">Calculated the second degree equation</p>
+<p>Problem7: Calculated the second degree equation</p>
 <table>
     <tr>
-        <td><input id="numbera" type="text">Enter number a:</td>
-        <td><input id="numberb" type="text">Enter number b:</td>
-        <td><input id="numberc" type="text">Enter number c:</td>
+        <td>Enter number a:</td>
+        <td>Enter number b:</td>
+        <td>Enter number c:</td>
+    </tr>
+    <tr>
+        <td><label for="numbera"></label><input id="numbera" type="text"></td>
+        <td><label for="numberb"></label><input id="numberb" type="text"></td>
+        <td><label for="numberc"></label><input id="numberc" type="text"></td>
         <td><button onclick="sdequation()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 8 kiem tra tuoi nguoi-->
-<p style="font-size: 30px; text-align: center">Check your age</p>
+<p>Problem8: Check your age</p>
 <table>
     <tr>
-        <td><input id="age" type="text">Enter your age a:</td>
+        <td>Enter your age a:</td>
+    </tr>
+    <tr>
+        <td><label for="age"></label><input id="age" type="text"></td>
         <td><button onclick="checkage()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 9 kiem tra 3 so co phai cach cua tam giac khong-->
-<p style="font-size: 30px; text-align: center">check a, b, c are sides of triangle</p>
+<p>Problem9: Check a, b, c are sides of triangle</p>
 <table>
     <tr>
-        <td><input id="edgea" type="text">Enter edge a:</td>
-        <td><input id="edgeb" type="text">Enter edge b:</td>
-        <td><input id="edgec" type="text">Enter edge c:</td>
+        <td>Enter edge a:</td>
+        <td>Enter edge b:</td>
+        <td>Enter edge c:</td>
+    </tr>
+    <tr>
+        <td><label for="edgea"></label><input id="edgea" type="text"></td>
+        <td><label for="edgeb"></label><input id="edgeb" type="text"></td>
+        <td><label for="edgec"></label><input id="edgec" type="text"></td>
         <td><button onclick="checktriangle()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 10 tinh gia tien dien-->
-<p style="font-size: 30px; text-align: center">Electric bill</p>
+<p>Problem10: Electric bill</p>
 <table>
     <tr>
-        <td><input id="elec" type="text">Enter the amount of electricity used ( unit kWh ):</td>
+        <td>Enter the amount of electricity used ( unit kWh ):</td>
+    </tr>
+    <tr>
+        <td><label for="elec"></label><input id="elec" type="text"></td>
         <td><button onclick="elecbill()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 11 tinh thue thu nhap ca nhan-->
-<p style="font-size: 30px; text-align: center">Personal income tax</p>
+<p>Problem11: Personal income tax</p>
 <table>
     <tr>
-        <td><input id="tax" type="text">Enter your income in one month ( unit VND):</td>
+        <td>Enter your income in one month ( unit VND):</td>
+    </tr>
+    <tr>
+        <td><label for="tax"></label><input id="tax" type="text"></td>
         <td><button onclick="pertax()" type="submit">Check</button></td>
     </tr>
 </table>
 
 <hr><!--bai 12 tinh lai ngan hang-->
-<p style="font-size: 30px; text-align: center">Bank interest rate</p>
+<p>Problem12: Bank interest rate</p>
 <table>
     <tr>
-        <td><input id="moneyin" type="text">Enter your bank deposit amount ( unit VND):</td>
-        <td><input id="rate" type="text">Enter your bank interest rate ( unit %):</td>
-        <td><input id="month" type="text">Enter the amount of month you want to deposit:</td>
+        <td>Enter your bank deposit amount ( unit VND):</td>
+        <td>Enter your bank interest rate ( unit %):</td>
+        <td>Enter the amount of month you want to deposit:</td>
+    </tr>
+    <tr>
+        <td><label for="moneyin"></label><input id="moneyin" type="text"></td>
+        <td><label for="rate"></label><input id="rate" type="text"></td>
+        <td><label for="month"></label><input id="month" type="text"></td>
         <td><button onclick="calbank()" type="submit">Check</button></td>
     </tr>
 </table>
 
-
-
-
-
-
 <script>
+    //Problem1: Convert from Celsius to Fahrenheit
     function convertctof() {
-        let celcius = parseInt(document.getElementById('celsius').value);
-        let fahrenheit = 9/5 * celcius + 32;
-        alert('The fahrenheit is: ' + fahrenheit + ' F');
+        let celcius = document.getElementById('celsius').value;
+
+        if (!isNaN(celcius)){
+            let fahrenheit = 9/5 * celcius + 32;
+            alert('The fahrenheit is: ' + fahrenheit + ' F');
+        } else {
+            alert("Wrong input");
+        }
     }
 
+    //Problem2: Convert from metter to feet
     function convertmtof() {
-        let metter = parseInt(document.getElementById('metter').value);
-        let feet = metter * 3.28;
-        alert('The height measure by feed is: ' + feet + ' ft');
+        let metter = document.getElementById('metter').value;
+        if (!isNaN(metter)) {
+            let feet = metter * 3.28;
+            alert('The height measure by feed is: ' + feet + ' ft');
+        } else {
+            alert("Wrong input");
+        }
     }
 
+    //Problem3: Calculated the area of the square</p>
     function areasquare() {
-        let edge = parseInt(document.getElementById('edge').value);
-        let area = edge * edge;
-        alert('The area of the square is: ' + area);
+        let edge = document.getElementById('edge').value;
+        if (!isNaN(edge)) {
+            let area = edge * edge;
+            alert('The area of the square is: ' + area);
+        } else {
+            alert("Wrong input");
+        }
     }
 
+    //Problem4: Calculated the area of the rectangular</p>
     function arearec() {
-        let edge1 = parseInt(document.getElementById('edge1').value);
-        let edge2 = parseInt(document.getElementById('edge2').value);
-        let area = edge1 * edge2;
-        alert('The area of the rectangular is: ' + area);
+        let edge1 = document.getElementById('edge1').value;
+        let edge2 = document.getElementById('edge2').value;
+        if (!isNaN(edge1) && !isNaN(edge2)) {
+            let area = edge1 * edge2;
+            alert('The area of the rectangular is: ' + area);
+        } else {
+            alert("Wrong input");
+        }
     }
 
+    //Problem5: Calculated the area of the right triangle
     function arearitri() {
-        let edge3 = parseInt(document.getElementById('edge3').value);
-        let edge4 = parseInt(document.getElementById('edge4').value);
-        let area = edge3 * edge4 /2;
-        alert('The area of the right triangle is: ' + area);
+        let edge3 = document.getElementById('edge3').value;
+        let edge4 = document.getElementById('edge4').value;
+        if (!isNaN(edge3) && !isNaN(edge4)) {
+            let area = edge3 * edge4 /2;
+            alert('The area of the right triangle is: ' + area);
+        } else {
+            alert("Wrong input");
+        }
     }
 
+    //Problem6: Calculated the first degree equation
     function fdequation() {
         let a = document.getElementById('numa').value;
         let b = document.getElementById('numb').value;
-        if(a === 0) {
-            if(b === 0){
-                alert(`All are solution for x`);
-            }
-            else{
-                alert(`Can't solve for x`);
-            }
-        }
-        else{
-            alert(`x = ` + (-b/a) );
-        }
-    }
-
-    function sdequation() {
-        let a = document.getElementById('numbera').value;
-        let b = document.getElementById('numberb').value;
-        let c = document.getElementById('numberc').value;
-        let d = (b * b) - (4 * a * c)
-
-        if(a === 0) {
-            if(b === 0){
-                if (c === 0) {
-                    alert('All are solutions of x');
-
+        if (!isNaN(a) && !isNaN(b)) {
+            if(a === 0) {
+                if(b === 0){
+                    alert(`All are solution for x`);
                 }
                 else{
                     alert(`Can't solve for x`);
                 }
             }
             else{
+                alert(`x = ` + (-b/a) );
+            }
+        } else {
+            alert("Wrong input");
+        }
+    }
+
+    //Problem7: Calculated the second degree equation
+    function sdequation() {
+        let a = document.getElementById('numbera').value;
+        let b = document.getElementById('numberb').value;
+        let c = document.getElementById('numberc').value;
+        if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+            let d = (b * b) - (4 * a * c)
+            if(a === 0) {
+                if(b === 0){
+                    if (c === 0) {
+                        alert('All are solutions of x');
+                    }
+                    else{
+                        alert(`Can't solve for x`);
+                    }
+                }
+                else{
                     alert('x = '+(-c/b));
+                }
             }
-        }
-        else if (d >= 0) {
-            alert(`x1 = `+ ((-b + Math.sqrt(d)) / (2 * a)));
-            alert(`x2 = `+ ((-b - Math.sqrt(d)) / (2 * a)));
-        } else {
-            alert(`Can't solve for x`);
-        }
-    }
-
-    function checkage() {
-        let age = parseInt(document.getElementById('age').value);
-        if (age > 0 && age < 120) {
-            alert('your age is human age');
-        } else {
-            alert('your age is not human age');
-        }
-    }
-
-    function checktriangle() {
-        let a = parseInt(document.getElementById('edgea').value);
-        let b = parseInt(document.getElementById('edgeb').value);
-        let c = parseInt(document.getElementById('edgec').value);
-        if (a > 0 && b > 0 && c > 0) {
-            if (a + b > c && b + c > a && a + c > b) {
-                alert(`a, b, c is a edges of the triangle!`);
+            else if (d >= 0) {
+                alert(`x1 = `+ ((-b + Math.sqrt(d)) / (2 * a)));
+                alert(`x2 = `+ ((-b - Math.sqrt(d)) / (2 * a)));
             } else {
+                alert(`Can't solve for x`);
+            }
+        } else {
+            alert(`Wrong input`);
+        }
+    }
+
+    //Problem8: Check your age
+    function checkage() {
+        let age = document.getElementById('age').value;
+        if (!isNaN(age)) {
+            if (age > 0 && age < 120) {
+                alert('your age is human age');
+            } else {
+                alert('your age is not human age');
+            }
+        } else {
+            alert("Wrong input");
+        }
+    }
+
+    //Problem9: Check a, b, c are sides of triangle
+    function checktriangle() {
+        let a = document.getElementById('edgea').value;
+        let b = document.getElementById('edgeb').value;
+        let c = document.getElementById('edgec').value;
+        if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+            if (a > 0 && b > 0 && c > 0) {
+                if (a + b > c && b + c > a && a + c > b) {
+                    alert(`a, b, c is a edges of the triangle!`);
+                } else {
+                    alert(`a, b, c is not a edges of the triangle!`);
+                }
+            }else {
                 alert(`a, b, c is not a edges of the triangle!`);
             }
-        }else {
-                alert(`a, b, c is not a edges of the triangle!`);
-        }
-
-    }
-
-    function elecbill() {
-        let elec = parseInt(document.getElementById('elec').value);
-        let bill = 0;
-        if ( elec < 0) {
-           alert(`Wrong input, input must be greater than 0!`);
-        } else if ( elec <= 50) {
-            bill = elec * 1678;
-            alert('Your electric bill is: ' + bill + ' VND')
-        } else if ( elec <= 100) {
-            bill = (50 * 1678) + ((elec - 50) * 1734);
-            alert('Your electric bill is: ' + bill + ' VND')
-        } else if ( elec <= 200) {
-            bill = (50 * 1678) + (50 * 1734) + ((elec - 100) * 2014);
-            alert('Your electric bill is: ' + bill + ' VND')
-        } else if ( elec <= 300) {
-            bill = (50 * 1678) + (50 * 1734) + (100 * 2014) + ((elec -200) * 2536);
-            alert('Your electric bill is: ' + bill + ' VND')
-        }
-    }
-
-    function pertax() {
-        let income = parseInt(document.getElementById('tax').value);
-        let tax = 0;
-        if ( income > 80000000) {
-            tax = income * 0.35;
-            alert(`Your personal income tax is: ` + tax + ' VND');
-        } else if ( income > 52000000) {
-            tax = income * 0.3;
-            alert(`Your personal income tax is: ` + tax + ' VND');
-        } else if ( income > 32000000) {
-            tax = income * 0.25;
-            alert(`Your personal income tax is: ` + tax + ' VND');
-        } else if ( income > 18000000) {
-            tax = income * 0.2;
-            alert(`Your personal income tax is: ` + tax + ' VND');
-        } else if ( income > 10000000) {
-            tax = income * 0.15;
-            alert(`Your personal income tax is: ` + tax + ' VND');
-        } else if ( income > 5000000) {
-            tax = income * 0.10;
-            alert(`Your personal income tax is: ` + tax + ' VND');
-        } else if ( income > 0) {
-            tax = income * 0.05;
-            alert(`Your personal income tax is: ` + tax + ' VND');
         } else {
             alert('Wrong input');
         }
     }
 
+    //Problem10: Electric bill
+    function elecbill() {
+        let elec = document.getElementById('elec').value;
+        let bill = 0;
+        if (!isNaN(elec) && !isNaN(bill)) {
+            if ( elec < 0) {
+                alert(`Wrong input, input must be greater than 0!`);
+            } else if ( elec <= 50) {
+                bill = elec * 1678;
+                alert('Your electric bill is: ' + bill + ' VND')
+            } else if ( elec <= 100) {
+                bill = (50 * 1678) + ((elec - 50) * 1734);
+                alert('Your electric bill is: ' + bill + ' VND')
+            } else if ( elec <= 200) {
+                bill = (50 * 1678) + (50 * 1734) + ((elec - 100) * 2014);
+                alert('Your electric bill is: ' + bill + ' VND')
+            } else if ( elec <= 300) {
+                bill = (50 * 1678) + (50 * 1734) + (100 * 2014) + ((elec -200) * 2536);
+                alert('Your electric bill is: ' + bill + ' VND')
+            }
+        } else {
+            alert('Wrong input');
+        }
+    }
+
+    //Problem11: Personal income tax
+    function pertax() {
+        let income = document.getElementById('tax').value;
+        let tax = 0;
+        if (!isNaN(income) && !isNaN(tax)) {
+            if ( income > 80000000) {
+                tax = income * 0.35;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else if ( income > 52000000) {
+                tax = income * 0.3;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else if ( income > 32000000) {
+                tax = income * 0.25;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else if ( income > 18000000) {
+                tax = income * 0.2;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else if ( income > 10000000) {
+                tax = income * 0.15;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else if ( income > 5000000) {
+                tax = income * 0.10;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else if ( income > 0) {
+                tax = income * 0.05;
+                alert(`Your personal income tax is: ` + tax + ' VND');
+            } else {
+                alert('Wrong input');
+            }
+        } else {
+            alert('Wrong input');
+        }
+    }
+
+    //Problem12: Bank interest rate
     function calbank() {
         let money = parseInt(document.getElementById('moneyin').value);
         let rates = document.getElementById('rate').value;
         let month = parseInt(document.getElementById('month').value);
-        let moneyInterestRate = money * (rates * 0.01) / 360 * (30 * month);
-        alert(`Your personal income tax is: ` + moneyInterestRate + ' VND');
+        if (!isNaN(money) && !isNaN(rates) && !isNaN(month)){
+            if (!isNaN(money) && !isNaN(rates) && !isNaN(month)) {
+                let moneyInterestRate = money * (rates * 0.01) / 360 * (30 * month);
+                alert(`Your personal income tax is: ` + moneyInterestRate + ' VND');
+            } else {
+                alert("Wrong input");
+            }
+        } else {
+            alert('Wrong input');
+        }
     }
-
 </script>
 </body>
 </html>

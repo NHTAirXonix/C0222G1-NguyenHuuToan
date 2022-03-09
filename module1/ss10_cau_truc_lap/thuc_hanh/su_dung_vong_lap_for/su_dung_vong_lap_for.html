@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="bai1()" type="submit">Bai1</button>
+<p id="bai1"></p>
+<button onclick="bai2()" type="submit">Bai2</button>
+<p id="bai2"></p>
+<script>
+
+    function bai1() {
+        let i;
+        let text = "";
+        for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("bai1").innerHTML = text;
+    }
+
+    function bai2() {
+        let num = prompt("Enter your number: ");
+        let total = 0;
+        let i = 1;
+        for (; i <= num; i +=1) {
+            total+=i;
+        }
+        alert(total);
+    }
+
+</script>
+</body>
+</html>
