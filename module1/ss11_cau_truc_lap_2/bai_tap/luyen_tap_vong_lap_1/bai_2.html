@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    while (true){
+        let input = prompt('Enter the temperature: ');
+        if (!isNaN(input)) {
+            if (input > 100) {
+                alert('Please decrease the temperature');
+            } else if (input <20) {
+                alert('Please increase the temperature');
+            } else {
+                alert('The temperature is normal');
+                break;
+            }
+        } else {
+            alert('Wrong input');
+        }
+    }
+</script>
+</html>

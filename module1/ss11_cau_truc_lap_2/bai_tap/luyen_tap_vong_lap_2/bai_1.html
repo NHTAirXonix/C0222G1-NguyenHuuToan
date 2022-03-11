@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input = parseInt(prompt('How many number in Fibonacci you want to print ?'))
+    let nextTerm = 0;
+    let n1 = 0;
+    let n2 = 1;
+    for (let i = 1; i <= input; i++) {
+        document.write(n1 + '<br>');
+        nextTerm = n1 + n2;
+        n1 = n2;
+        n2 = nextTerm;
+    }
+</script>
+</html>

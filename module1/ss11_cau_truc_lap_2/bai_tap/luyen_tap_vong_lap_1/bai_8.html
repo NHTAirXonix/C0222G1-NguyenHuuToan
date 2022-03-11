@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="newgame()">NEW</button>
+    <button type="reset" onclick="newgame()">RESER</button>
+</body>
+<script>
+    function newgame() {
+        let slnum = parseInt(prompt('Smallest number: '));
+        let bgnum = parseInt(prompt('Biggest number: '));
+        let random1 = Math.floor((Math.random() * (bgnum-slnum)) + slnum);
+        while (true)
+        {
+            let inputf = parseInt(prompt('Enter the number you guess ( Stop please input -999):'));
+            if (inputf === -999) {
+                alert('Bye Bye!');
+                break;
+            } else if (inputf === random1) {
+                alert('Welldone!');
+                break;
+            } else if (inputf > random1) {
+                alert('Your number is bigger!');
+            } else {
+                alert('Your number is smaller!');
+            }
+        }
+    }
+</script>
+</html>

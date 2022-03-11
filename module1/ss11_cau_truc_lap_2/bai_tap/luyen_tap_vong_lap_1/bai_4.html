@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let nextTerm = 0;
+    let n1 = 1;
+    let n2 = 1;
+    let check = 0;
+    while (check === 0) {
+        if (n1 % 5 === 0) {
+            alert(n1);
+            check = 2;
+            break;
+        } else {
+            nextTerm = n1 + n2;
+            n1 = n2;
+            n2 = nextTerm;
+        }
+    }
+</script>
+</html>

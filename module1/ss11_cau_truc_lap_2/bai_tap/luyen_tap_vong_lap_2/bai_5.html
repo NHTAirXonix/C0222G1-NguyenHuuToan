@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    do {
+        let money = parseInt(prompt('Enter your bank deposit amount (unit VND):'));
+        let rates = parseInt(prompt('Enter your bank interest rate (unit %):'));
+        let year = parseInt(prompt('Enter the amount of year you want to deposit:'));
+        if (!isNaN(money) && !isNaN(rates) && !isNaN(year)) {
+            if (!isNaN(money) && !isNaN(rates) && !isNaN(year)) {
+                let moneyInterestRate = money * Math.pow((1 + (rates * 0.01)), year);
+                alert(`Your personal income tax is: ` + moneyInterestRate + ' VND');
+            } else {
+                alert("Wrong input");
+            }
+        } else {
+            alert('Wrong input');
+        }
+        var x = prompt('Do you want to continue? (y/n) ');
+    } while (x === 'y' );
+
+
+</script>
+
+</html>

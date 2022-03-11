@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const a = '*', b = ' ';
+    document.write('<table>');
+    for (let i = 1; i <= 7; i++) {
+        document.write('<tr> ');
+        for (j = 1; j < 23; j++) {
+            if (i >= 2 && i <= 6 && j !== 1 && j !== 22) {
+                if (j >= 2 && j <= 21) {
+                    document.write('<th>' + b + '</th>');
+                }
+            } else {
+                document.write('<th>' + a + '</th>');
+            }
+        }
+        document.write('</tr>');
+    }
+</script>
+</html>

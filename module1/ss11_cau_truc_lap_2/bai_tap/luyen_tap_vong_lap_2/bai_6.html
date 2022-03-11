@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let a = '*', b = ' ';
+    document.write('<table>');
+    for (let i = 1; i <= 6; i++) {
+        document.write('<tr>');
+        for (let j = 1; j <= 7; j++) {
+            if (i === 1 && j === 1 || i === 1 && j === 4 || i === 1 && j === 7) {
+                document.write('<th>' + b + '</th>');
+            } else if (i === 4 && j === 1 || i === 4 && j === 7) {
+                document.write('<th>' + b + '</th>');
+            } else if (i === 5 && j <= 2 || i === 5 && j >= 6) {
+                document.write('<th>' + b + '</th>');
+            } else if (i === 6 && j <= 3 || i === 6 && j >= 5) {
+                document.write('<th>' + b + '</th>');
+            } else {
+                document.write('<th>' + a + '</th>');
+            }
+        }
+        document.write('</tr>');
+    }
+</script>
+
+</html>
