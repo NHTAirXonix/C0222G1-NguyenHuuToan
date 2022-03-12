@@ -3,73 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        td {
-            min-width: 200px;
-            max-width: 200px;
-            min-height: 100px;
-            max-height: 100px;
-        }
-        table {
-            background-color: #919191;
-        }
-        button  {
-            min-width: 50px;
-            max-width: 50px;
-            min-height: 25px;
-            max-height: 25px;
-            object-position: center;
-            position: absolute;
-        }
-    </style>
+    <link rel="stylesheet" href="ung_dung_good_fast_cheap.css">
 </head>
-<body style="font-family: Arial">
-    <table>
-        <tr>
-            <td><button id="goodid" onclick="goodfu()"></button></td>
-            <td>GOOD</td>
-        </tr>
-        <tr>
-            <td><button id="fastid" onclick="fastfu()"></button></td>
-            <td>FAST</td>
-        </tr>
-        <tr>
-            <td><button id="cheapid" onclick="cheapfu()"></button></td>
-            <td>CHEAP</td>
-        </tr>
-    </table>
+<h3>How to do you want your project to be?</h3>
+<body style="font-family: Arial,serif">
+<input type="checkbox" id="good" class="toggle"/>
+<label for="good"><b>GOOD</b></label>
+<br>
+<input type="checkbox" id="cheap" class="toggle"/>
+<label for="cheap"><b>CHEAP</b></label>
+<br>
+<input type="checkbox" id="fast" class="toggle"/>
+<label for="fast"><b>FAST</b></label>
+
+
 <script>
-    let good = 1;
-    let fast = 1;
-    let cheap = 1;
+    const toggles = document.querySelectorAll('.toggle')
+    const good = document.querySelector('#good')
+    const cheap = document.querySelector('#cheap')
+    const fast = document.querySelector('#fast')
 
-    function goodfu() {
-        if (good == 1) {
-            document.getElementById('goodid').style.left = 25 + 'px';
-            good++;
-        } else if (good == 2) {
-            document.getElementById('goodid').style.left = 25 + 'px';
-            good--;
-        }
-    }
+    toggles.forEach(toggle => toggle.addEventListener('change',(e) => doTheTrick(e.target)))
 
-    function fastfu() {
-        if (fast == 1) {
-            document.getElementById('fastid').style.left = 25 + 'px';
-            fast++;
-        } else if (fast == 2) {
-            document.getElementById('fastid').style.left = 25 + 'px';
-            fast--;
-        }
-    }
+    function doTheTrick(theClickedOn){
+        if(good.checked && cheap.checked && fast.checked){
 
-    function cheapfu() {
-        if (cheap == 1) {
-            document.getElementById('cheapid').style.left = 25 + 'px';
-            cheap++;
-        } else if (cheap == 2) {
-            document.getElementById('cheapid').style.left = 25 + 'px';
-            cheap--;
+            if(good === theClickedOn){
+                fast.checked = false
+            }
+            if(cheap === theClickedOn){
+                good.checked = false
+            }
+            if(fast === theClickedOn){
+                cheap.checked = false
+            }
         }
     }
 </script>
