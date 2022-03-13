@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input = prompt('Enter your word you want to find:');
+    let englishWord = ["hello", "dog", "cat", "bird"];
+    let vietnamWord = ["Xin chào", "Con chó", "Con mèo", "Con chim"];
+
+    for (let i = 0; i < englishWord.length; i++) {
+        if (input === englishWord[i]) {
+            alert('The word ' + input + ' mean ' + vietnamWord[i]);
+            break;
+        } else if (i === (englishWord.length - 1)) {
+            alert('That word is not in the dictionary');
+        }
+    }
+
+</script>
+</html>

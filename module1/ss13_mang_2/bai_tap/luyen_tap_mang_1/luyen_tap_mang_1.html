@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .background {
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #088636);
+            height: 100%;
+            padding-top: 1px;
+            font-family: Barlow, serif;
+            font-size: 50px;
+        }
+        td {
+            margin: auto;
+            text-align: center;
+            border-radius: 5px;
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #a50b0b);
+            padding: 5px;
+        }
+        table {
+            border: none;
+            margin: 100px auto auto;
+            border-radius: 10px;
+            background-color: hsl(2, 19%, 100%);
+            width: 50%;
+            padding: 5px;
+        }
+        h2  {
+            color: white;
+            text-align: center;
+        }
+        button {
+            font-size: 15px;
+            text-align: center;
+            border-radius: 5px;
+            height: 50px;
+            width: 100px;
+            margin: 5px auto auto;
+        }
+    </style>
+</head>
+<body class="background">
+<h2>Luyện tập mảng 01</h2>
+<table>
+    <tr>
+        <td><button onclick="problem1()" type="submit">Problem1</button></td>
+        <td><button onclick="problem2()" type="submit">Problem2</button></td>
+        <td><button onclick="problem3()" type="submit">Problem3</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="problem4()" type="submit">Problem4</button></td>
+        <td><button onclick="problem5()" type="submit">Problem5</button></td>
+        <td><button onclick="problem6()" type="submit">Problem6</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="problem7()" type="submit">Problem7</button></td>
+        <td><button onclick="problem8()" type="submit">Problem8</button></td>
+        <td><button onclick="problem9()" type="submit">Problem9</button></td>
+    </tr>
+</table>
+</body>
+
+<script>
+    //Problem1
+    function problem1() {
+        let array1 = [];
+        let count = 0;
+        for (let i = 0; i < 10; i++) {
+            array1[i] = parseInt(prompt('Enter the value of index ' + i));
+        }
+        for (let i = 0; i < 10; i++) {
+            if (array1[i] >= 10) {
+                count++;
+            }
+        }
+        alert('The array have ' + count + ' number equal or bigger than "10" !');
+    }
+
+    //Problem2
+    function problem2() {
+        let array1 = [];
+        let count = 0;
+        let positon = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < 10);
+        let max = -99999;
+        for (let i = 0; i < 10; i++) {
+            if (array1[i] > max) {
+                max = array1[i];
+                positon = i;
+            } else if (i === 9) {
+                alert('The biggest number is: ' + max + ' and position in an array is: ' + positon)
+            }
+        }
+    }
+
+    //Problem3
+    function problem3() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let count = 0;
+        let total = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < lengthArray);
+        let max = -99999
+        let averages;
+        for (let i = 0; i < lengthArray; i++) {
+            total = total + array1[i];
+            if (array1[i] > max) {
+                max = array1[i];
+            }
+        }
+        averages = total / lengthArray;
+        alert('The biggest number is: ' + max + ' and the average of an array is: ' + averages);
+    }
+
+    //Problem4
+    function problem4() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let array2 = [];
+        let count = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < lengthArray);
+        for (let i = 0; i < lengthArray; i++) {
+            array2[i] = array1[lengthArray - i - 1];
+        }
+        for (let i = 0; i < lengthArray; i++) {
+            console.log(array1[i]);
+        }
+        for (let i = 0; i < lengthArray; i++) {
+            console.log(array2[i]);
+        }
+    }
+
+    //Problem5
+    function problem5() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let count = 0;
+        let count1 = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < lengthArray);
+        for (let i = 0; i < lengthArray; i++) {
+            if (array1[i] < 0) {
+                count1++;
+            }
+        }
+        alert('An array have ' + count1 + ' negative integer');
+    }
+
+    //Problem6
+    function problem6() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let count = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < lengthArray);
+        let input = parseInt(prompt('Enter the number you want to find: '))
+        for (let i = 0; i < lengthArray; i++) {
+            if (input === array1[i]) {
+                alert('Your number is in the array!');
+                break;
+            } else if (i === lengthArray - 1) {
+                alert('Your number is not in the array!');
+                break;
+            }
+        }
+    }
+
+    //Problem7
+    function problem7() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: ')), array1 = [], count = 0, check = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < lengthArray);
+        for (let i = 0; i < lengthArray; i++) { //check bang console.log
+            console.log(array1[i]);
+        }
+        let input = parseInt(prompt('Enter the number you want to find: '))
+        for (let i = 0; i < lengthArray; i++) {
+            if (input === array1[i]) {
+                array1.splice(i, 1);
+                check++;
+            } else if (i === lengthArray - 1) {
+                array1[i] = 0;
+            }
+        }
+        if (check === 0) {
+            alert('Your number is not in the array!');
+        }
+        for (let i = 0; i < lengthArray; i++) { //check bang console.log
+            console.log(array1[i]);
+        }
+    }
+
+    //Problem8
+    function problem8() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let count = 0;
+        do {
+            array1[count] = parseInt(prompt('Enter the value of index ' + count));
+            if (array1[count] === array1[count - 1]) {
+                count--;
+            }
+            count++;
+        } while (count < lengthArray);
+        for (let i = 0; i < lengthArray; i++) { //check bang console.log
+            console.log(array1[i]);
+        }
+        array1.sort(function (a, b) {
+            return b - a
+        });
+        for (let i = 0; i < lengthArray; i++) { //check bang console.log
+            console.log(array1[i]);
+        }
+    }
+
+    //Problem9
+    function problem9() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let array2 = [];
+        let array3;
+        let count1 = 0;
+        let count2 = 0;
+        do {
+            array1[count1] = parseInt(prompt('Enter the value of index ' + count1 + ' in array 1'));
+            if (array1[count1] === array1[count1 - 1]) {
+                count1--;
+            }
+            count1++;
+        } while (count1 < lengthArray);
+        do {
+            array2[count2] = parseInt(prompt('Enter the value of index ' + count2 + ' in array 2'));
+            if (array2[count2] === array2[count2 - 1]) {
+                count2--;
+            }
+            count2++;
+        } while (count2 < lengthArray);
+        array3 = array1.concat(array2);
+
+        for (let i = 0; i < lengthArray*2; i++) { //check bang console.log
+            console.log(array3[i]);
+        }
+    }
+</script>
+</html>

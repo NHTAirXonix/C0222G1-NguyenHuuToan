@@ -1,0 +1,24 @@
+
+.background {
+    background: #373B44;
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+    background: linear-gradient(to right, #1066c2, #088636);
+    height: 100%;
+    padding-top: 1px;
+    font-family: Barlow, serif;
+    font-size: 50px;
+}
+
+h3 {
+    text-align: center;
+    color: #dddddd;
+    margin: auto;
+    margin-top: 100px;
+}
+
+p {
+    text-align: center;
+    color: #dddddd;
+    font-size: 50px;
+    margin: auto;
+}

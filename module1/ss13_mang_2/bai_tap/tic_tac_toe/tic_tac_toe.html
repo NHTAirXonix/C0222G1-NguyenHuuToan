@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="tic_tac_toe.css">
+</head>
+<body class="background">
+<h3>TIC TAC TOE</h3>
+<p id="carogame"/>
+<input type="button" value="Change value" onclick="changeValue()">
+
+</body>
+<script>
+
+    let b = document.getElementById("carogame");
+    let input = '';
+    let board = [
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+    ];
+    let result = [
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+        ['.', '.', '.'],
+    ];
+    let data = "";
+    let count = 0;
+    let destroyloop = 0;
+    for (let i = 0; i < 3; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 3; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+
+    data += "<br/><br/><input type='button' value='Change value' onclick='changeValue()'>"
+    b.innerHTML = data;
+
+    function changeValue() {
+        if (count % 2 === 0) {
+            alert('Player X turn!');
+            input = 'X'
+        } else {
+            alert('Player O turn!');
+            input = 'O'
+        }
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        board[positionX][positionY] = input;
+        result[positionX][positionY] = input;
+        data = "";
+        for (let i = 0; i < 3; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 3; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;";
+            }
+        }
+
+        data += "<br/><br/><input type='button' value='Change value' onclick='changeValue()'>"
+        b.innerHTML = data;
+
+        if (count >= 4) {
+            for (let i =0; i < 3; i++ ){
+                for (let j = 0; j < 3; j++) {
+                    if (result[i][j] === result[i][j + 1] && result[i][j + 1] === result[i][j + 2] ||
+                        result[i][j] === result[i + 1][j] && result[i + 1][j] === result[i + 2][j] ||
+                        result[i][j] === result[0][2] && result[i][j] === result[i + 1][j-1] && result[i + 1][j-1] === result[i + 2][j-2] ||
+                        result[i][j] === result[0][0] && result[i][j] === result[i + 1][j + 1] && result[i + 1][j + 1] === result[i + 2][j + 2]
+                    ) {
+                        if (count % 2 === 0) {
+                            alert("Player X win");
+                            destroyloop++;
+                            break;
+                        } else {
+                            alert("Player O win");
+                            destroyloop++
+                            break;
+                        }
+                    }
+                }
+                if (destroyloop>0) {
+                    break;
+                }
+            }
+
+        }
+        console.log(count);
+        count++;
+    }
+
+
+</script>
+</html>
