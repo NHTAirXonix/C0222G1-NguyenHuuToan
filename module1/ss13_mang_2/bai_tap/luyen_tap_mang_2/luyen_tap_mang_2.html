@@ -3,8 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
+    <style>
+        .background {
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #088636);
+            height: 100%;
+            padding-top: 1px;
+            font-family: Barlow, serif;
+            font-size: 50px;
+        }
 
+        td {
+            margin: auto;
+            text-align: center;
+            border-radius: 5px;
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #a50b0b);
+            padding: 5px;
+        }
+
+        table {
+            border: none;
+            margin: 100px auto auto;
+            border-radius: 10px;
+            background-color: hsl(2, 19%, 100%);
+            width: 50%;
+            padding: 5px;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            font-size: 15px;
+            text-align: center;
+            border-radius: 5px;
+            height: 50px;
+            width: 175px;
+            margin: 5px auto auto;
+        }
+    </style>
+</head>
+<body class="background">
+<h2>Luyện tập mảng 02</h2>
+<table>
+    <tr>
+        <td>
+            <button onclick="problem1()" type="submit">PROBLEM 1</button>
+        </td>
+        <td>
+            <button onclick="problem2()" type="submit">PROBLEM 2</button>
+        </td>
+        <td>
+            <button onclick="problem3()" type="submit">PROBLEM 3</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="problem4()" type="submit">PROBLEM 4</button>
+        </td>
+        <td>
+            <button onclick="problem5()" type="submit">PROBLEM 5</button>
+        </td>
+        <td>
+            <button onclick="problem6()" type="submit">PROBLEM 6</button>
+        </td>
+    </tr>
+</table>
 </body>
+<script>
+    function problem1() {
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        for (let i = 0; i < 5; i++) {
+            console.log('row ' + i);
+            for (let j = 0; j < 4; j++) {
+                console.log(a[i][j]);
+            }
+
+        }
+    }
+
+    function problem2() {
+        let a = ['c', 's', 'c', '2', '6', '1'];
+        let b = [];
+        for (let i = 0; i < a.length; i++) {
+            b[i] = a[a.length - i - 1];
+        }
+        console.log(b);
+    }
+
+    function problem3() {
+        let count = 0;
+        let length = prompt("Enter the length of an array: ");
+        let a = [];
+        for (let i=0; i<length;i++) {
+            a[i] = prompt("Enter the value of index " + i + " in an array:");
+        }
+        for (let i = 0; i < a.length; i++) {
+            if(!isNaN(a[i])) {
+                count++;
+            }
+        }
+        console.log(a);
+        alert('There are ' + count + ' number in an array')
+    }
+
+    function problem4() {
+        let str = "I love you and our son, we    are a happy family";
+        let arrayString = str.split(" ");
+        for (let i=0; i < arrayString.length; i++) {
+            if (arrayString[i] ==='') {
+                arrayString.splice(i,1);
+            }
+        }
+        console.log(arrayString);
+        alert("There are " + arrayString.length + " in a string");
+    }
+
+    function problem5() {
+        let check = 0;
+        let str1 = prompt('Enter string 1: ');
+        let str2 = prompt('Enter string 2: ');
+        let arrayString1 = str1.split("");
+        let arrayString2 = str2.split("");
+        for (let i = 0; i < arrayString1.length; i++) {
+            if (arrayString1[i] !== arrayString2[i]) {
+                check++;
+            }
+        }
+        if (check === 0) {
+            alert("String1 and String2 is the same!");
+        } else {
+            alert("String1 and String2 is not the same!");
+        }
+        console.log(arrayString1);
+        console.log(arrayString2);
+    }
+
+    function problem6() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let count = 0;
+        while (count < lengthArray){
+            array1[count] = prompt('Enter the value of index ' + count);
+            count++;
+        }
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] === '-') {
+                array1[i] = '_';
+            }
+        }
+        console.log(array1);
+    }
+
+</script>
 </html>
