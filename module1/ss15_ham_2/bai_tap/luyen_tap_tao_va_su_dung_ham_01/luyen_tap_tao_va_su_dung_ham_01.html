@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .background {
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #088636);
+            height: 100%;
+            padding-top: 1px;
+            font-family: Barlow, serif;
+            font-size: 50px;
+        }
+
+        td {
+            margin: auto;
+            text-align: center;
+            border-radius: 5px;
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #a50b0b);
+            padding: 5px;
+        }
+
+        table {
+            border: none;
+            margin: 100px auto auto;
+            border-radius: 10px;
+            background-color: hsl(2, 19%, 100%);
+            width: 50%;
+            padding: 5px;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            font-size: 15px;
+            text-align: center;
+            border-radius: 5px;
+            height: 50px;
+            width: 175px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="background">
+<table>
+    <tr>
+        <td>
+            <button onclick="alertMessage()" type="submit">PROBLEM 1</button>
+        </td>
+        <td>
+            <button onclick="problem2(5)" type="submit">PROBLEM 2</button>
+            <span><label for="result2"></label><input placeholder="Result" type="text" id="result2"></span>
+        </td>
+        <td>
+            <button onclick="problem3()" type="submit">PROBLEM 3</button>
+            <span><label for="result3"></label><input placeholder="Result" type="text" id="result3"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="addNumbers()" type="submit">PROBLEM 4</button>
+        </td>
+        <td>
+            <button onclick="problem5()" type="submit">PROBLEM 5</button>
+        </td>
+        <td>
+            <button onclick="problem6()" type="submit">END</button>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    function alertMessage() {
+        alert("Xin chao");
+    }
+
+    function problem2(a) {
+        document.getElementById('result2').value = a + 1;
+    }
+
+    function problem3() {
+        let number1 = parseInt(prompt('Enter number 1:'));
+        let number2 = parseInt(prompt('Enter number 2:'));
+        if (number1 > number2) {
+            alert('Number 1 bigger than Number 2');
+        } else {
+            document.getElementById('result3').value = number1 + number2;
+        }
+    }
+
+    function addNumbers() {
+        let firstNum = 4;
+        let secondNum = 8;
+        result = firstNum + secondNum;
+        alert(result);
+        return result;
+    }
+
+    function problem5() {
+        let starsname = ["polaris", "aldebaran", "deneb", "vega", "altair", "dubhe", "regulus"];
+        let constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
+        let inputnamestars = prompt("Enter the name of stars you want to find: ");
+        inputnamestars = inputnamestars.toLowerCase();
+        for (let i = 0; i< starsname.length; i++) {
+            if (inputnamestars === starsname[i]) {
+                alert("Stars name is: " + inputnamestars + " and the constellation of this stars is " + constellation[i]);
+                break;
+            } else {
+                alert('Wrong input');
+            }
+        }
+    }
+</script>
+</html>

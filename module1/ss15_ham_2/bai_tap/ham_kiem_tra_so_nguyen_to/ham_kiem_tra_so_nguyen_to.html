@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="inputnumber" type="text">
+<button onclick="checknumber()">Check</button>
+</body>
+<script>
+    function checknumber() {
+        let number = document.getElementById('inputnumber').value;
+        let check = 0;
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                check++;
+            }
+        }
+        if (check === 0) {
+            alert('The number ' + number + ' is a prime number!');
+        } else {
+            alert('The number ' + number + ' is not a prime number!');
+        }
+    }
+</script>
+</html>

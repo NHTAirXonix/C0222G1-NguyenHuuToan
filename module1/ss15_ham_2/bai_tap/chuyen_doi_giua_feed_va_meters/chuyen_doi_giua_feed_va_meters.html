@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="inputnumber" type="text">
+<select name="options" id="unit">
+    <option value="meters">Convert to Meters</option>
+    <option value="feet">Convert to Feet</option>
+</select>
+<button onclick="conver()">Check</button>
+</body>
+<script>
+    function conver() {
+        let unit = document.getElementById('unit').value;
+        let input = document.getElementById('inputnumber').value;
+        let result =1;
+        if (unit === 'meters') {
+            result = input * 0.305;
+            alert(input + ' feet equal to ' + result + ' meters');
+        } else {
+            result = input * 3.279;
+            alert(input + ' meters equal to ' + result + ' feet');
+        };
+    }
+</script>
+</html>
