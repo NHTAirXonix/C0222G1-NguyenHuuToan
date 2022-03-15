@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .background {
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #088636);
+            height: 100%;
+            padding-top: 1px;
+            font-family: Barlow, serif;
+            font-size: 50px;
+        }
+
+        h4 {
+            color: white;
+            text-align: center;
+        }
+
+        .button1 {
+            font-size: 20px;
+            text-align: center;
+            border-radius: 5px;
+            height: 50px;
+            width: 100px;
+            margin-left: 5px;
+            background-color: #03a83c;
+            color: white;
+            border-color: white;
+        }
+
+        .button2 {
+            font-size: 20px;
+            text-align: center;
+            border-radius: 5px;
+            height: 36px;
+            width: 100px;
+            margin-left: 5px;
+            background-color: #e80c0c;
+            color: white;
+            border-color: white;
+            float: right;
+            margin-right: 5px;
+        }
+
+        .button3 {
+            font-size: 20px;
+            text-align: center;
+            border-radius: 5px;
+            height: 36px;
+            width: 100px;
+            margin-left: 5px;
+            background-color: #bda30a;
+            color: white;
+            border-color: white;
+            float: right;
+            margin-right: 5px;
+        }
+
+        input {
+            border-radius: 5px;
+            height: 50px;
+            width: 300px;
+            font-size: 25px;
+        }
+
+        div {
+            background-color: #cccccc;
+            border-radius: 5px;
+            height: 450px;
+            width: 100%;
+            font-size: 30px;
+            opacity: 0.7;
+        }
+
+        .textr {
+            color: white;
+            font-size: 20px;
+            float: right;
+        }
+
+        .textl {
+            color: white;
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="background">
+<h4>Add New Product</h4>
+<label>
+    <input id="product" type="text">
+</label>
+<button class="button1" type="button" onclick="add(product)">Add</button>
+<h4>Display All Product</h4>
+<table style="width: 100%">
+    <tr>
+        <td class="textl">Name of products</td>
+        <td class="textr" id="numberProduct"></td>
+    </tr>
+</table>
+<div>
+    <p id="display"></p>
+</div>
+</body>
+<script>
+    let product = ["BMW I8", "LAMBORGHINI VENENO", "FERRARI FXX","LAMBORGHINI HURACAN", "FERRARI F50"];
+
+    function display(product) {
+        let s = "";
+        for (let i = 0; i < product.length; i++) {
+            s = s + (i + 1) + ". " + product[i] + "<button class='button3' type='button' onclick='edit(" + i + ")'>Edit</button><button class=\"button2\" type=\"button\" onclick=\"del(" + i + ")\">Delete</button><br>";
+        }
+        document.getElementById('numberProduct').innerHTML = product.length + " Products"
+        return document.getElementById("display").innerHTML = s;
+    }
+
+    function add(product) {
+        let newproduct = document.getElementById("product").value;
+        product.push(newproduct);
+        display(product);
+    }
+
+    function edit(value) {
+        console.log(value);
+        product[value] = prompt("sua ten san pham", product[value]);
+
+        display(product);
+    }
+
+    function del(value) {
+        console.log(value);
+        product.splice(value, 1);
+        display(product);
+    }
+    display(product);
+</script>
+</html>

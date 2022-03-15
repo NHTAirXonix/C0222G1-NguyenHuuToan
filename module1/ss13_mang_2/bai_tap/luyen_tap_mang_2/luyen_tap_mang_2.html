@@ -106,15 +106,17 @@
         let count = 0;
         let length = prompt("Enter the length of an array: ");
         let a = [];
+        let b = [];
         for (let i=0; i<length;i++) {
             a[i] = prompt("Enter the value of index " + i + " in an array:");
         }
-        for (let i = 0; i < a.length; i++) {
-            if(!isNaN(a[i])) {
+        b = a.join("").split("");
+        console.log(b);
+        for (let i = 0; i < b.length; i++) {
+            if(!isNaN(b[i])) {
                 count++;
             }
         }
-        console.log(a);
         alert('There are ' + count + ' number in an array')
     }
 
@@ -158,6 +160,7 @@
             array1[count] = prompt('Enter the value of index ' + count);
             count++;
         }
+        array1 = array1.join("").split("")
         for (let i = 0; i < array1.length; i++) {
             if (array1[i] === '-') {
                 array1[i] = '_';
@@ -165,6 +168,5 @@
         }
         console.log(array1);
     }
-
 </script>
 </html>

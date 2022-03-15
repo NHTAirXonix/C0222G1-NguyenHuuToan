@@ -8,7 +8,6 @@
 <body class="background">
 <h3>TIC TAC TOE</h3>
 <p id="carogame"/>
-<input type="button" value="Change value" onclick="changeValue()">
 
 </body>
 <script>
@@ -62,11 +61,11 @@
         b.innerHTML = data;
 
         if (count >= 4) {
-            for (let i =0; i < 3; i++ ){
+            for (let i = 0; i < 3; i++) {
                 for (let j = 0; j < 3; j++) {
                     if (result[i][j] === result[i][j + 1] && result[i][j + 1] === result[i][j + 2] ||
                         result[i][j] === result[i + 1][j] && result[i + 1][j] === result[i + 2][j] ||
-                        result[i][j] === result[0][2] && result[i][j] === result[i + 1][j-1] && result[i + 1][j-1] === result[i + 2][j-2] ||
+                        result[i][j] === result[0][2] && result[i][j] === result[i + 1][j - 1] && result[i + 1][j - 1] === result[i + 2][j - 2] ||
                         result[i][j] === result[0][0] && result[i][j] === result[i + 1][j + 1] && result[i + 1][j + 1] === result[i + 2][j + 2]
                     ) {
                         if (count % 2 === 0) {
@@ -80,7 +79,7 @@
                         }
                     }
                 }
-                if (destroyloop>0) {
+                if (destroyloop > 0) {
                     break;
                 }
             }

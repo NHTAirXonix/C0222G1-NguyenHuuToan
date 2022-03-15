@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array1 = ["12", "15", "17", "19", "21", "23", "27"];
+    let array2 = [];
+    let input = parseInt(prompt("Enter number you want to input in an array"));
+    let position = parseInt(prompt("Enter the position( from 0 to 6:"));
+    console.log(array1);
+    console.log(position);
+    for (let i = 0, j = 0; i < array1.length + 1; i++, j++)
+        if (position === i) {
+            array2[i] = input;
+            j--;
+        } else {
+            array2[i] = array1[j];
+        }
+    alert(array1)
+    alert(array2)
+</script>
+</html>

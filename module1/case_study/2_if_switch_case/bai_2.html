@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm. Ký tự là bất
+    kỳ được nhập từ bàn phím. Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'*/
+    let income = prompt("Enter your income in one month: ");
+    let result = 0;
+    if (income >15000000) {
+        result = income *0.20;
+    } else if (income > 7000000) {
+        result = income *0.15;
+    } else
+        result = income * 0.05;
+    alert("Your personal tax is: "+ result+ " your income after tax is: " + (income - result));
+</script>
+</html>

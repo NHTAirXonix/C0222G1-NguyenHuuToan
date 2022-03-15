@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây.
+        Ví dụ: x = 4, y = 5
+        * * * * *
+        *       *
+        *       *
+        * * * * *    */
+    const a = '*', b = ' ';
+    document.write('<table>');
+    for (let i = 1; i <= 4; i++) {
+        document.write('<tr> ');
+        for (j = 1; j < 6; j++) {
+            if (i >= 2 && i <= 3 && j !== 1 && j !== 5) {
+                if (j >= 2 && j <= 4) {
+                    document.write('<th>' + b + '</th>');
+                }
+            } else {
+                document.write('<th>' + a + '</th>');
+            }
+        }
+        document.write('</tr>');
+    }
+</script>
+</html>

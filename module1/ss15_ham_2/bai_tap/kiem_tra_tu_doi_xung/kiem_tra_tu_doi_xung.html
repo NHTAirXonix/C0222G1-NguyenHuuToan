@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let input = prompt('Enter your word:')
+    let array = input.split("");
+    alert(array);
+    let check = 0;
+    if (array.length % 2 === 0) {
+        for (let i = 0; i < array.length / 2; i++) {
+            if (array[i] !== array[array.length - i - 1]) {
+                check++;
+            }
+        }
+    } else {
+        for (let i = 0; i < ((array.length - 1) / 2); i++) {
+            if (array[i] !== array[array.length - i - 1]) {
+                check++;
+            }
+        }
+    }
+    if (check === 0) {
+        alert('your word is palindrome');
+    } else {
+        alert('your word is not palindrome');
+    }
+</script>
+</html>

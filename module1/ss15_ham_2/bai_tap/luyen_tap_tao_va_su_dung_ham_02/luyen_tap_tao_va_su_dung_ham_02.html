@@ -3,8 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-</head>
-<body>
+    <style>
+        .background {
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #088636);
+            height: 100%;
+            padding-top: 1px;
+            font-family: Barlow, serif;
+            font-size: 50px;
+        }
 
+        td {
+            margin: auto;
+            text-align: center;
+            border-radius: 5px;
+            background: #373B44;
+            background: -webkit-linear-gradient(to right, #4286f4, #373B44);
+            background: linear-gradient(to right, #1066c2, #a50b0b);
+            padding: 5px;
+        }
+
+        table {
+            border: none;
+            margin: 100px auto auto;
+            border-radius: 10px;
+            background-color: hsl(2, 19%, 100%);
+            width: 50%;
+            padding: 5px;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            font-size: 15px;
+            text-align: center;
+            border-radius: 5px;
+            height: 50px;
+            width: 175px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body class="background">
+<h2>Luyện tập tạo và sử dụng hàm 02</h2>
+<table>
+    <tr>
+        <td>
+            <button onclick="problem1()" type="submit">PROBLEM 1</button>
+            <span><label for="result1"></label><input placeholder="Result" type="text" id="result1"></span>
+        </td>
+        <td>
+            <button onclick="problem2()" type="submit">PROBLEM 2</button>
+        </td>
+        <td>
+            <button onclick="problem3()" type="submit">PROBLEM 3</button>
+            <span><label for="result3"></label><input placeholder="Result" type="text" id="result3"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="problem4()" type="submit">PROBLEM 4</button>
+            <span><label for="result4"></label><input placeholder="Result" type="text" id="result4"></span>
+        </td>
+        <td>
+            <button onclick="problem5()" type="submit">PROBLEM 5</button>
+            <span><label for="result5"></label><input placeholder="Result" type="text" id="result5"></span>
+        </td>
+        <td>
+            <button onclick="problem6()" type="submit">PROBLEM 6</button>
+            <span><label for="result6"></label><input placeholder="Result" type="text" id="result6"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="problem7()" type="submit">PROBLEM 7</button>
+            <span><label for="result7"></label><input placeholder="Result" type="text" id="result7"></span>
+        </td>
+        <td>
+            <button onclick="problem8()" type="submit">PROBLEM 8</button>
+        </td>
+        <td>
+            <button onclick="problem9()" type="submit">PROBLEM 9</button>
+        </td>
+    </tr>
+</table>
 </body>
+<script>
+    function problem1() {
+        let input = prompt('Enter the number:');
+        document.getElementById('result1').value = "The square of " + input + " is " + input * input;
+    }
+
+    function problem2() {
+        let input = prompt('Enter the radius of the circle: ')
+        alert("The area of circle is " + 3.14 * input * input);
+        alert("The diameter of circle is " + 3.14 * 2 * input);
+    }
+
+    function problem3() {
+        let input = prompt('Enter the number: ')
+        let factorial = 1;
+        for (let i = 1; i <= input; i++) {
+            factorial = factorial * i;
+        }
+        document.getElementById('result3').value = "The factorial of " + input + " is " + factorial;
+    }
+
+    function problem4() {
+        let input = prompt('Enter the number: ');
+        if (!isNaN(input)) {
+            document.getElementById('result4').value = "True";
+        } else {
+            document.getElementById('result4').value = "False";
+        }
+    }
+
+    function problem5() {
+        let array1 = [];
+        for (let i = 0; i < 3; i++) {
+            array1[i] = parseInt(prompt('Enter the number: '));
+        }
+        array1.sort(function (a, b) {
+            return a - b
+        });
+        console.log(array1);
+        document.getElementById('result5').value = "The smallest number is " + array1[0];
+    }
+
+    function problem6() {
+        let input = prompt('Enter the number: ');
+        if (input > 0) {
+            document.getElementById('result6').value = "Your number is a positive";
+        } else if (input < 0) {
+            document.getElementById('result6').value = "Your number is a negative";
+        } else {
+            document.getElementById('result6').value = "Your number = 0";
+        }
+    }
+
+    function problem7() {
+        let number1 = prompt('Enter the number 1: ');
+        let number2 = prompt('Enter the number 2: ');
+        let c = number1;
+        number1 = number2;
+        number2 = c;
+        document.getElementById('result7').value = "Num 1 = " + number1 + " Num 2 = " + number2;
+    }
+
+    function problem8() {
+        let length = parseInt(prompt('Enter the length of an array: '))
+        let array1 = [];
+        for (let i = 0; i < length; i++) {
+            array1[i] = parseInt(prompt('Enter the number of index' + i));
+        }
+        alert(array1);
+        array1.reverse();
+        alert(array1);
+    }
+
+    function problem9() {
+        let lengthArray = parseInt(prompt('Enter the length of an array: '));
+        let array1 = [];
+        let count = 0;
+        let appear = 0;
+        while (count < lengthArray) {
+            array1[count] = prompt('Enter the value of index ' + count);
+            count++;
+        }
+        let input = prompt('Find: ');
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] === input) {
+                appear++;
+            }
+        }
+        if (appear === 0) {
+            alert('Not in array -1')
+        } else {
+            alert("input: " + input + " appear " + appear + " lần")
+        }
+        console.log(array1);
+
+    }
+</script>
 </html>
