@@ -10,14 +10,13 @@
 <script>
     /*Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm. Ký tự là bất
     kỳ được nhập từ bàn phím. Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'*/
-    let income = prompt("Enter your income in one month: ");
-    let result = 0;
-    if (income >15000000) {
-        result = income *0.20;
-    } else if (income > 7000000) {
-        result = income *0.15;
-    } else
-        result = income * 0.05;
-    alert("Your personal tax is: "+ result+ " your income after tax is: " + (income - result));
+    let input = prompt("Enter your income in one month: ");
+    let check=0;
+    if (input === "i" || input === "u" || input === "o" || input === "a" || input === "e" ||
+        input === "I" || input === "U" || input === "O" || input === "A" || input === "E" ) {
+        alert(input +" is vowel");
+    } else {
+        alert(input +" is not vowel");
+    }
 </script>
 </html>

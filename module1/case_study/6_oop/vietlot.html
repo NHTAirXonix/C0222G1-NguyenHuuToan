@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 40px;
+        }
+        td {
+            margin: auto;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            background-color: #919191;
+            color: white;
+            border-radius: 45%;
+            font-size: 30px;
+
+        }
+        body {
+            margin: auto;
+            font-family: Arial, serif;
+            color: white;
+            background: linear-gradient(to right, #1066c2, #088636);
+        }
+        button {
+            width: 150px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-left: 175px;
+            margin-top: 50px;
+            background: linear-gradient(to right, #1066c2, #088636);
+            color: white;
+        }
+        div{
+            display: inline-block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            background-color: white;
+            opacity: 70%;
+            border-radius: 10px;
+        }
+        table{
+            margin: 25px auto auto;
+        }
+    </style>
+</head>
+<body>
+<h2>CODE GYM LOTTERY</h2>
+<div>
+    <button onclick="bylottery()">Buy your lottery</button>
+    <table id="ticket"></table>
+    <table class="result" id="result"></table>
+</div>
+</body>
+<script>
+    let array1 = [];
+
+    function bylottery() {
+        let s = "";
+        let array3 = [];
+        let numberOfTicket = parseInt(prompt("How many lottery you want to buy? (1 - 4)"));
+        for (let i = 0; i < numberOfTicket; i++) {
+            let check = parseInt(prompt("Which option you want? \n 1. You can choose your number.\n 2. Random your number"));
+            for (let j = 0; j < 1; j++) {
+                let newArray = [];
+                if (check === 2) {
+                    for (let k = 0; k < 6; k++) {
+                        newArray[k] = Math.floor(Math.random() * (99));
+                    }
+                } else {
+                    for (let k = 0; k < 6; k++) {
+                        newArray[k] = parseInt(prompt("Enter the number slot " + (k + 1)));
+                    }
+                }
+                array1[i] = newArray;
+                array3[i] = newArray;
+                console.log(array1[i]);
+            }
+        }
+        let array2 = [];
+        for (let k = 0; k < 6; k++) {
+            array2[k] = Math.floor(Math.random() * (99));
+        }
+
+        console.log(array2);
+        for (let i = 0; i < numberOfTicket; i++) {
+            s += "<tr>";
+            for (let j = 0; j < 6; j++) {
+                s += "<td>" + array1[i][j] + "</td>"
+            }
+            s += "</tr>";
+        }
+
+        s += "<tr><td>R</td><td>E</td><td>S</td><td>U</td><td>L</td><td>T</td></tr>";
+        for (let j = 0; j < 6; j++) {
+
+            s += "<td>" + array2[j] + "</td>"
+        }
+
+
+        document.getElementById("result").innerHTML = s;
+        for (let i = 0; i < numberOfTicket; i++) {
+            for (let j = 0; j < 6; j++) {
+                if (array1[i][j] === array2[j]) {
+                    array3[i][j] = 1;
+                } else {
+                    array3[i][j] = 0;
+                }
+            }
+        }
+
+
+        //xet giai tưng ve
+
+        for (let k = 0; k < numberOfTicket; k++) {
+            if (array3[k][4] === array3[k][3] && array3[k][5] === array3[k][4] && array3[k][4] === 1) {
+                if (array3[k][3] === array3[k][2] && array3[k][2] === 1) {
+                    if (array3[k][2] === array3[k][1] && array3[k][2] === 1) {
+                        if (array3[k][1] === array3[k][0] && array3[k][1] === 1) {
+                            alert("You ticket " + (k+1) + " get first prize!")
+                            continue;
+                        }
+                    }
+                    alert("You ticket " + (k+1) + " get second prize!");
+                    continue;
+                }
+                alert("You ticket " + (k+1) + " get consolation prize!");
+                continue;
+            }
+            alert("You ticket " + (k+1) + " dont get any prize!");
+        }
+        console.log(array3);
+
+
+    }
+</script>
+</html>

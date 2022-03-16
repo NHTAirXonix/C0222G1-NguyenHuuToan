@@ -14,18 +14,25 @@
         *   *
         *     *
         * * * * *   */
-    const a = '*', b = '';
-    document.write('<table>');
-    for (let i = 0; i < 5; i++) {
-        document.write('<tr> ');
-        for (let j = 0; j < 5; j++) {
-            if (i === j || j===0 && i<5 || i===4 ) {
-                    document.write('<th>' + a + '</th>');
-            } else {
-                document.write('<th>' + b + '</th>');
+    do {
+        const a = '*', b = '';
+        let height = prompt("Enter the height: ");
+        if (!isNaN(height) && height > 0) {
+            document.write('<table>');
+            for (let i = 0; i < height; i++) {
+                document.write('<tr> ');
+                for (let j = 0; j < height; j++) {
+                    if (i === j || j === 0 && i < height || i === height - 1) {
+                        document.write('<th>' + a + '</th>');
+                    } else {
+                        document.write('<th>' + b + '</th>');
+                    }
+                }
+                document.write('</tr>');
             }
+            break;
         }
-        document.write('</tr>');
-    }
+    } while (true);
+
 </script>
 </html>

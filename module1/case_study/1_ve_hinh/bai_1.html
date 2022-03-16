@@ -14,20 +14,35 @@
         *       *
         *       *
         * * * * *    */
-    const a = '*', b = ' ';
-    document.write('<table>');
-    for (let i = 1; i <= 4; i++) {
-        document.write('<tr> ');
-        for (j = 1; j < 6; j++) {
-            if (i >= 2 && i <= 3 && j !== 1 && j !== 5) {
-                if (j >= 2 && j <= 4) {
-                    document.write('<th>' + b + '</th>');
+    /*do {
+
+        //}
+        break;
+    } while (true);*/
+    do {
+        const a = '*', b = ' ';
+        let width = parseInt(prompt("Enter the width"));
+        let height = parseInt(prompt("Enter the height:"));
+        if (!isNaN(width) && !isNaN(height) && width > 0 && height > 0) {
+            document.write('<table>');
+            console.log(height)
+            console.log(width)
+            for (let i = 1; i <= height; i++) {
+                document.write('<tr> ');
+                for (j = 1; j <= width; j++) {
+                    if (i >= 2 && i <= height - 1 && j !== 1 && j !== width) {
+                        if (j >= 2 && j <= width - 1) {
+                            document.write('<th>' + b + '</th>');
+                        }
+                    } else {
+                        document.write('<th>' + a + '</th>');
+                    }
                 }
-            } else {
-                document.write('<th>' + a + '</th>');
+                document.write('</tr>');
             }
+            break;
         }
-        document.write('</tr>');
-    }
+    } while (true);
+
 </script>
 </html>

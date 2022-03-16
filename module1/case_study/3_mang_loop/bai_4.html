@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let numbers = prompt("Enter the number: ");
+    let array1 = [];
+    let array2 = [];
+    array1 = numbers.split("");
+    for (let i = 0; i < array1.length; i++) {
+        switch (array1[i]) {
+            case "1":
+                array2[i]= "Một ";
+                break;
+            case "2":
+                array2[i]= "Hai ";
+                break;
+            case "3":
+                array2[i]= "Ba ";
+                break;
+            case "4":
+                array2[i]= "Bốn ";
+                break;
+            case "5":
+                array2[i]= "Năm ";
+                break;
+            case "6":
+                array2[i]=  "Sáu ";
+                break;
+            case "7":
+                array2[i]=  "Bảy ";
+                break;
+            case "8":
+                array2[i]=  "Tám ";
+                break;
+            case "9":
+                array2[i]=  "Chín ";
+                break;
+            case "0":
+                array2[i]=  "Không ";
+                break;
+        }
+    }
+    alert(array1)
+    alert(array2);
+</script>
+</html>

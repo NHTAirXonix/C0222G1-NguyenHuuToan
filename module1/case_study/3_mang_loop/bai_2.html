@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let length1 = prompt("Enter the length of array1: ");
+    let array1 = [];
+    let length2 = prompt("Enter the length of array2: ");
+    let array2 = [];
+    let array3 = [];
+    let count = 0;
+    for (let i = 0; i < length1; i++) {
+        array1[i] = parseInt(prompt("Enter value for array1 in index " + i));
+    }
+    for (let i = 0; i < length2; i++) {
+        array2[i] = parseInt(prompt("Enter value for array2 in index " + i));
+    }
+    for (let i = 0; i < length2; i++) {
+        let check = 0;
+        for (let j = 0; j < length1; j++) {
+            if (array2[i] === array1[j]) {
+                check++;
+            }
+            if (j === length1 - 1 && check === 0) {
+                array3[count] = array2[i];
+                count++;
+            }
+        }
+    }
+    alert("Missing Value " + array3 + " in array 1");
+</script>
+</html>

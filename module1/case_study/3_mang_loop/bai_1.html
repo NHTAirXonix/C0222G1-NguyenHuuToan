@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let length = prompt("Enter the length of array1: ");
+    let array1 = [];
+    let array2 = [];
+    for (let i = 0; i < length; i++) {
+        array1[i] = parseInt(prompt("Enter the value of index " + i));
+    }
+    array2[0] = array1[0];
+    for (let i=1; i<length;i++){
+        array2[i] = array1[i]+ array1[i-1];
+    }
+    alert(array1);
+    alert(array2);
+</script>
+</html>

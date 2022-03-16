@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let length = prompt("Enter the length of array1 and array2: ");
+    let array1 = [];
+    let array2 = [];
+    let position = 0;
+    for (let i = 0; i < length; i++) {
+        array1[i] = parseInt(prompt("Enter value for array1 in index " + i));
+    }
+    for (let i = 0; i < length; i++) {
+        array2[i] = parseInt(prompt("Enter value for array2 in index " + i));
+    }
+    for (let i = 0; i < length-1; i++) {
+        if (array1[i] / array2[i] < array1[i + 1] / array2[i + 1]) {
+            position = i+1;
+        }
+    }
+    alert("The biggest fraction is " + array1[position] + "/" + array2[position] + " in position " + position);
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let string = prompt("Enter your string:");
+    string = string.toLowerCase();
+    let array1 = [];
+    let array2 = [];
+    let n = 0;
+    let count = 1;
+    array1 = string.split("");
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i] === " ") {
+            array1.splice(i, 1);
+            i--;
+        }
+    }
+    array2[0] = array1[0];
+    for (let i = 1; i < array1.length; i++) {
+        let check = 0;
+        for (let j = 0; j < count; j++) {
+            if (array1[i] === array2[j]) {
+                check++;
+            }
+            if (check === 0 && j === count - 1) {
+                array2[count] = array1[i];
+                count++;
+            }
+        }
+    }
+    alert("We have " + array2.length + " different symbols, that is: " + array2);
+</script>
+</html>

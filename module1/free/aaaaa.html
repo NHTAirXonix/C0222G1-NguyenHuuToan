@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array1 = [5,2,2,4,5];
+    let array2 =[];
+    console.log(array1)
+    for (let i=0; i<array1.length; i++){
+        let test = array1[i];
+        let count=0;
+        for(let j=0; j <array1.length;j++){
+            if  (test === array1[j]){
+                count++;
+            } if (j===array1.length-1){
+                array2[i]=count;
+            }
+        }
+    }
+    console.log(array1)
+    console.log(array2)
+    let check=0;
+    for(let i=0; i<array2.length-1; i++){
+        if (array2[i] !== array2[i+1]){
+            check++;
+        }
+    }
+    console.log(check)
+    if(check===0)
+        alert("true")
+    else
+        alert("false")
+
+</script>
+</html>

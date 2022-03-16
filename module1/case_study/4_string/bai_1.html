@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let string = prompt("Enter your string:");
+    string = string.toLowerCase();
+    let array1 = [];
+    array1 = string.split(" ");
+    for (let i = 0; i < array1.length; i++) {
+        if (array1[i] === "") {
+            array1.splice(i, 1);
+            i--;
+        }
+    }
+    for (let i = 0;i<array1.length;i++){
+        let newArray = array1[i].split("");
+        newArray[0] = newArray[0].toUpperCase();
+        array1[i]= newArray.join("");
+    }
+    alert(array1);
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="menu()">Show menu</button>
+<table id="menu"></table>
+<button onclick="takebill()">Oder</button>
+</body>
+<script>
+    let array1 = ["Cafe", "Cam vắt", "Nước ép cà rốt", "Nước ép cà chua", "Nước lọc", "Nước dừa",];
+    let array2 = [10000, 15000, 16000, 15000, 5000, 18000];
+    let s = "";
+    let input = 0;
+    let amount = 0;
+    function menu() {
+        for (let i = 0; i < 6; i++) {
+            console.log(array1[i])
+            console.log(array2[i])
+            s += "<tr><td>" + (i+1) + "</td><td>" + array1[i] + "</td><td>" + array2[i] + "</td></tr>";
+        }
+        document.getElementById("menu").innerHTML = s;
+    }
+    function takebill() {
+        do {
+            input = parseInt(prompt("Enter the number of drink you want: "));
+            if (input === 7 ) {
+                alert("See you later!")
+                break;
+            }
+            amount = parseInt(prompt("Enter the amount: "));
+            alert("The bill of " + array1[input-1]+ " amount is "+ amount + " = " + (array2[input-1]*amount))
+
+        } while (true)
+    }
+</script>
+</html>

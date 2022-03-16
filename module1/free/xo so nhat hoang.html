@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xổ số codegym</title>
+</head>
+<style>
+    input{
+        width: 20px;
+        text-align: center;
+    }
+    .blue-input{
+        background-color: deepskyblue;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+<body>
+Xổ số CodeGym<br><br>
+<div id="ticket">
+</div>
+<br>
+<br>
+<div>
+    <button type="button" id="buyTicket" onclick="buyTicket()">Mua vé</button>
+    <button type="button" id="checkResult" onclick="checkResult()">Kiểm tra kết quả</button>
+    <p id="showTottery"></p>
+
+</div>
+<script>
+    let ticket = 0;
+    let codeHtml = "";
+    let arrayTicket = new Array(4);
+    let checkTicket = new Array(4);
+    let onOff = 0;
+    let lottery = [Math.floor((Math.random()*98)+1),Math.floor((Math.random()*98)+1),Math.floor((Math.random()*98)+1),Math.floor((Math.random()*98)+1),Math.floor((Math.random()*98)+1),Math.floor((Math.random()*98)+1)];
+
+    console.log(lottery)
+    for (let i = 0 ; i<arrayTicket.length;i++){
+        arrayTicket[i] = new Array(6);
+    }
+    console.log(arrayTicket[0])
+    if (isNaN(arrayTicket[0]) ){
+        console.log(arrayTicket[0])
+    }
+    function checkResult() {
+        for (let x = 0; x< lottery.length;x++){ //length 6
+            for (let y = 0; y< arrayTicket.length;y++){ //length 4
+                for (let z = 0; z< arrayTicket[y].length;y++){ //length 6   đang bí ở chỗ này
+                    if (arrayTicket[y].indexOf(lottery[x]) !== -1){
+                        checkTicket[x] += 1;
+                    }
+                }
+
+            }
+        }
+        document.getElementById('showTottery').innerHTML = checkTicket;
+    }
+
+    function buyTicket() {
+        if (ticket === 4){
+            alert("chỉ mua tối đa 4 vé");
+        }else{
+            ticket++;
+            displayReload();
+            codeHtml ="";
+        }
+    }
+
+    function addNumber(value,value2) {
+        let sum = `${value}${value2}`;
+        arrayTicket[value][value2] = parseInt(document.getElementById(sum).value);
+        console.log(arrayTicket)
+    }
+
+    function displayReload() {
+        let showBackgroundNumberTottery = "";
+
+        for (let j = 0 ;j < ticket;j++) {
+            codeHtml += `Vé ${j+1}: `;
+            for (let i = 0; i<6;i++){
+                if (onOff === 1){
+                    //if (arrayTicket[j][i] === lottery[i])
+                }
+                arrayTicket[j].sort(function(a, b){return a-b});
+                codeHtml += `<input class="" type="text" id="${j}${i}" maxlength="2" value="${(arrayTicket[j][i]===undefined||isNaN(arrayTicket[j][i])?"":arrayTicket[j][i])}" oninput="addNumber(${j},${i})"> `;
+            }
+            codeHtml += `<button type="button" id="random${j}" onclick="random(${j})">Ngẫu nhiên</button><br><br>`;
+            document.getElementById('ticket').innerHTML = codeHtml;
+        }
+    }
+    function random(value) {
+        for (let i =0;i<arrayTicket[value].length; i++){
+            if (arrayTicket[value][i] === undefined||isNaN(arrayTicket[value][i])){
+                arrayTicket[value][i] = Math.floor((Math.random()*98)+1);
+                //console.log(value+""+(i+1))
+                document.getElementById(value+""+(i)).value = arrayTicket[value][i];
+                //console.log(value+(i+1))
+                //codeHtml = "";
+                //displayReload();
+                break;
+            }
+        }
+        displayReload();
+        console.log(arrayTicket);
+        codeHtml ="";
+    }
+    //console.log(09)
+</script>
+</body>
+</html>
