@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function temperature(c) {
+        this.c = c;
+        this.getctof = function () {
+            return (c * 1.8) + 32;
+        }
+        this.getctok = function () {
+            return c + 273.15;
+        }
+    }
+
+    function start() {
+        let start = new temperature(20);
+        let f = start.getctof();
+        let k = start.getctok();
+        alert("20C to F is: "+f);
+        alert("20C to K is: "+k);
+    }
+    start();
+</script>
+</html>

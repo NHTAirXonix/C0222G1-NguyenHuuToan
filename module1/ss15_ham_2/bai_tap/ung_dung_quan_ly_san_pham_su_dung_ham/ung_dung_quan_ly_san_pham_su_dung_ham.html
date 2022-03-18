@@ -71,7 +71,7 @@
             border-radius: 5px;
             height: 450px;
             width: 100%;
-            font-size: 30px;
+            font-size: 35px;
             opacity: 0.7;
         }
 
@@ -106,14 +106,14 @@
 </div>
 </body>
 <script>
-    let product = ["BMW I8", "LAMBORGHINI VENENO", "FERRARI FXX","LAMBORGHINI HURACAN", "FERRARI F50"];
+    let product = ["BMW I8", "LAMBORGHINI VENENO", "FERRARI FXX", "LAMBORGHINI HURACAN", "FERRARI F50"];
 
     function display(product) {
         let s = "";
         for (let i = 0; i < product.length; i++) {
             s = s + (i + 1) + ". " + product[i] + "<button class='button3' type='button' onclick='edit(" + i + ")'>Edit</button><button class=\"button2\" type=\"button\" onclick=\"del(" + i + ")\">Delete</button><br>";
         }
-        document.getElementById('numberProduct').innerHTML = product.length + " Products"
+        document.getElementById('numberProduct').innerHTML = product.length + " Products";
         return document.getElementById("display").innerHTML = s;
     }
 
@@ -126,7 +126,6 @@
     function edit(value) {
         console.log(value);
         product[value] = prompt("sua ten san pham", product[value]);
-
         display(product);
     }
 
@@ -135,6 +134,7 @@
         product.splice(value, 1);
         display(product);
     }
+
     display(product);
 </script>
 </html>

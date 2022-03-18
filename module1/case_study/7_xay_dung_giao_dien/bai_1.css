@@ -1,0 +1,99 @@
+body {
+    font-family: Tahoma, serif;
+    font-size: 13px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+#top {
+    background-color: #002d80;
+    height: 150px;
+    text-align: center;
+    font-size: 20px;
+    color: #cccccc;
+    margin-top: 0px;
+}
+
+#top input.search {
+    height: 40px;
+    width: 350px;
+    margin-right: 50px;
+
+}
+
+#top input.url {
+    height: 40px;
+    width: 1000px;
+    min-width: 500px;
+    margin-top: 25px;
+    margin-right: 100px;
+    margin-left: 200px;
+}
+#top button {
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#title {
+    background-color: #dcd7d7;
+    height: 100px;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    line-height: 100px;
+}
+
+#title img {
+    height: 75px;
+    width: 75px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 12px;
+}
+
+#main {
+    background-color: #cccccc;
+    height: 750px;
+}
+
+#main #left {
+    width: 10%;
+    background-color: #716e6e;
+    float: left;
+    height: 750px;
+    line-height: 150px;
+    text-align: center;
+}
+
+#main #right {
+    width: 90%;
+    background-color: white;
+    float: right;
+    min-height: 400px;
+    height: 750px;
+}
+
+#bottom {
+    background-color: #002d80;
+    height: 100px;
+    text-align: center;
+    clear: left;
+    line-height: 150px;
+}
+
+#main #left ul {
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+#main #left ul li {
+    list-style: none;
+
+}
+
+#main #left ul li label {
+    background-color: #cccccc;
+}

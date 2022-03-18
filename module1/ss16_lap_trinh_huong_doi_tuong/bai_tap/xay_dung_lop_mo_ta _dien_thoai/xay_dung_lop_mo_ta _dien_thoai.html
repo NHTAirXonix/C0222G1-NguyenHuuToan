@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class phone {
+        numberBat;value;
+        constructor(value,bata) {
+            this.value = value;
+            this.bata = bata;
+            let numberBat = bata;
+        }
+
+
+        writeMes = function (numberBat) {
+            let message = prompt("Enter your message: ");
+            numberBat--;
+            console.log(bata);
+            return message;
+        }
+        checkMes = function (messagea,countMesa,numberbat) {
+            for (let i = 0; i < countMesa; i++) {
+                alert("The content of message" + (i + 1) + " is: " + messagea[i]);
+            }
+            this.bata=this.bata-1;
+            console.log(bata);
+        }
+        checkMesBox = function (messageboxa,countMesboxa,bata) {
+            for (let i = 0; i < countMesboxa; i++) {
+                alert("The content of messagebox" + (i + 1) + " is: " + countMesboxa[i]);
+            }
+            this.bata=this.bata-1;
+            console.log(bata);
+        }
+        charge = function(bata){
+            this.bata = 100;
+        }
+        checkbat = function(bata){
+            return this.bata;
+        }
+    }
+
+    function action() {
+        let inputa = 1;
+        let inputb = 1;
+        let messagea = [];
+        let messagboxa = [];
+        let countMesa = 0;
+        let countMesboxa = 0;
+        let onOff = 0;
+        let bata=100;
+        while (inputa < 9 && inputa > 0) {
+            inputa = parseInt(prompt("Nokia phone\n" +
+                "1. Write the message \n 2. Check your message \n " +
+                "3. Check you message box \n 4. Check your phone on or off \n " +
+                "5. Turn on or off your phone \n 6. Charge your phone\n " +
+                "7.Sent your message \n 8. Put the phone down (not in 1 - 8)"));
+            if (inputa > 8 && inputa < 1) {
+                break;
+            }
+            if (inputa === 5) {
+                onOff++;
+                alert("Your phone is on!");
+                continue;
+            }
+            if (onOff % 2 === 0) {
+                alert("Please turn on your phone");
+                continue;
+            }
+            let nokia = new phone(inputa,bata);
+            if (inputa === 1) {
+
+                messagea[countMesa] = nokia.writeMes();
+                countMesa++;
+            } else if (inputa === 2) {
+                nokia.checkMes(messagea,countMesa);
+            } else if (inputa === 3) {
+                nokia.checkMesBox(messagboxa,countMesboxa);
+            } else if (inputa ===4){
+                let bat = nokia.checkbat();
+                alert(bat);
+            } else if (inputa ===6) {
+                nokia.charge(bata);
+                alert("Your battery is full");
+            }
+        }
+
+    }
+/*
+    while (inputb < 9 && inputb > 0) {
+        inputb = prompt("Iphone phone\n" +
+            "1. Write the message \n 2. Check your message \n " +
+            "3. Check you message box \n 4. Check your phone on or off \n " +
+            "5. Turn on or off your phone \n 6. Charge your phone\n " +
+            "7.Sent your message \n 8. Put the phone down (not in 1 - 8)");
+    }*/
+    action();
+</script>
+</html>
