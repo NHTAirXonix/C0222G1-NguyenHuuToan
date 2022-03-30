@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s = "12:45:54PM"
+    let arr = s.split("");
+    let n = arr.length;
+    for (let i = 0; i < n; i++) {
+        if (arr[i] === ":") {
+            arr.splice(i, 1);
+        }
+    }
+    let newarry = [];
+    arr.pop();
+    let h = arr.pop();
+    let text = arr.join('');
+    newarry[0] = text.slice(0, 2)
+    newarry[1] = text.slice(2, 4)
+    newarry[2] = text.slice(4, 6)
+    if (h === "A") {
+        if (newarry[0] === '12') {
+            newarry[0] = '00';
+        } else if (parseInt(newarry[0]) >= 1 && parseInt(newarry[0]) <= 12) {
+        }
+    } else if (h === 'P') {
+        if (parseInt(newarry[0]) >= 1 && parseInt(newarry[0]) < 12) {
+            newarry[0] = parseInt(newarry[0]) + 12;
+        } else {
+
+        }
+    }
+    let aaa = newarry.join(':');
+    console.log(aaa);
+</script>
+</body>
+</html>
+

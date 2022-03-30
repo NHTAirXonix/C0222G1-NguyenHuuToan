@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor() {
+
+        }
+
+        changeChanel = function (input, television) {
+            television.changeChanel(input);
+        }
+        changeVolume = function (television) {
+            television.changeVolume();
+        }
+        turnOnOff = function (television) {
+            if (television.checkOnOff() === 0) {
+                alert("TV is on");
+                television.turnOnOff()
+
+            } else if (television.checkOnOff() === 1) {
+                alert("Tv is off")
+                television.turnOnOff()
+            }
+        }
+
+    }
+
+    class Television {
+        constructor(check, chanel, volume) {
+            this.check = check;
+            this.chanel = chanel;
+            this.volume = volume
+        }
+
+        changeChanel = function (input) {
+            this.chanel = input;
+            alert('The chanel is change to ' + this.chanel)
+        }
+        changeVolume = function () {
+            this.volume += 2;
+            alert('The volume  is ' + this.volume)
+        }
+        turnOnOff = function () {
+            console.log(this.check);
+            if (this.check === 0) {
+                this.check = 1;
+            } else if (this.check === 1) {
+                this.check = 0;
+            }
+            console.log(this.check);
+        }
+        checkOnOff = function () {
+            return this.check;
+        }
+        checkvolume = function () {
+            return this.volume;
+
+        }
+
+    }
+
+    let check = 0;
+    let remote = new Remote();
+    let chanel = 0;
+    let volume = 20;
+    let television = new Television(check, chanel, volume);
+    while (true) {
+        remote.turnOnOff(television);
+        let input = prompt('Enter chanel:');
+        remote.changeChanel(input, television);
+        input = prompt('Enter chanel:');
+        remote.changeChanel(input, television);
+        input = prompt('Increase volume? (y/n)');
+        if (input === "y") {
+            remote.changeVolume(television);
+        } else
+            alert(television.checkvolume())
+        remote.turnOnOff(television);
+        break;
+    }
+</script>
+</body>
+
+</html>

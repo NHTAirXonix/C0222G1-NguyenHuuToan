@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+        constructor(status) {
+            this.status = status;
+        }
+        turnOn = function () {
+            alert("Light is on");
+            this.status = true;
+        }
+        turnOff = function () {
+            alert("Light is off");
+            this.status = false;
+        }
+    }
+    class SwitchButton {
+        constructor(status) {
+            this.status = status;
+        }
+        turnOn = function (lamp) {
+            alert('Switch is on');
+            lamp.turnOn();
+            this.status = true;
+        }
+        turnOff = function (lamp) {
+            alert('Switch is off');
+            lamp.turnOff();
+            this.status = false;
+        }
+    }
+    let lamp = new ElectricLamp(false);
+    let switcha = new SwitchButton(false);
+    while (true) {
+        let input = parseInt(prompt("1. Turn on the light\n2. Turn off the light\n3. Exit"));
+        if (input ===1){
+            switcha.turnOn(lamp);
+        } else if (input ===2) {
+            switcha.turnOff(lamp);
+        } else if (input === 3) {
+            break;
+        }
+    }
+</script>
+</body>
+</html>
